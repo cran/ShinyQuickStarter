@@ -1,0 +1,151 @@
+﻿Filename;Variable;Code;Condition
+custom.css;colour_custom_skin;"/* Custom color in header. */
+.skin-blue .main-header .navbar {
+	background-color: ###colour_custom_skin### !important;
+}
+
+.skin-blue .main-header .logo {
+  background-color: ###colour_custom_skin### !important;
+}
+
+/* Custom color in sidebar accent on hovering over tabItem. */
+.skin-blue .sidebar-menu > li.active > a, .skin-blue .sidebar-menu > li:hover > a {
+  border-left-color: ###colour_custom_skin### !important;
+}
+
+/* Custom color in top of box. */
+.box {
+  border-top: 3px solid ###colour_custom_skin###;
+}";all(get('checkbox_custom_css_js'), get('select_skin') == 'custom')
+custom.css;numeric_custom_font_size;/* Font family. */;get('checkbox_custom_css_js')
+custom.css;select_custom_font_family;/* Font size. */;get('checkbox_custom_css_js')
+custom.js;checkbox_fixed_body;"// Fixed header and sidebar at scrolling.
+$('body').addClass('fixed');";get('checkbox_custom_css_js')
+global.R;documentation_block;"#' @title
+#' @author
+#' @description
+#' @details
+#' @keywords";TRUE
+global.R;package_imports;"library(shiny)
+library(shinydashboard)";TRUE
+global.R;checkbox_remove_variables;"# Remove all variables.
+rm(list=ls())";get('checkbox_remove_variables')
+global.R;checkbox_source_functions;"# Source functions.
+function_files = list.files(path='functions', full.names=TRUE, recursive=TRUE)
+
+for (file in function_files) {
+  source(file, encoding='UTF-8')
+}";get('checkbox_source_functions')
+global.R;checkbox_source_modules;"# Source modules.
+module_files = list.files(path='modules', full.names=TRUE, recursive=TRUE)
+
+for (file in module_files) {
+  source(file, encoding='UTF-8')
+}";all(get('checkbox_modules'), get('checkbox_source_modules'))
+global.R;checkbox_load_data;"# Load data.
+data_files = list.files(path='../data/*.RData', full.names=TRUE, recursive=TRUE)
+
+for (file in data_files) {
+  load(file)
+}";get('checkbox_load_data')
+ui.R;text_title;title = '###text_title###';TRUE
+ui.R;select_skin;skin = '###select_skin###';get('select_skin') != 'custom'
+ui.R;checkbox_logo;tags$img(src='logo.jpg', width='230px');get('checkbox_logo')
+ui.R;sidebar;custom_function: .create_sidebar(navigation);"all(get('select_framework') == ""Shiny + ShinyDashboard"", get('select_navigation_type') == 'Sidebar')"
+ui.R;tab_items;custom_function: .create_tab_items(navigation);"all(get('select_framework') == ""Shiny + ShinyDashboard"", get('select_navigation_type') == 'Sidebar')"
+ui.R;colour_custom_skin;"tags$head(
+  tags$style(
+    HTML('/* Custom color in header. */
+			.skin-blue .main-header .navbar {
+				background-color: ###colour_custom_skin### !important;
+			}
+
+			.skin-blue .main-header .logo {
+			  background-color: ###colour_custom_skin### !important;
+			}
+
+			/* Custom color in sidebar accent on hovering over tabItem. */
+			.skin-blue .sidebar-menu > li.active > a, .skin-blue .sidebar-menu > li:hover > a {
+			  border-left-color: ###colour_custom_skin### !important;
+			}
+
+			/* Custom color in top of box. */
+			.box {
+			  border-top: 3px solid ###colour_custom_skin###;
+			}'
+         )
+  )
+)";all(!get('checkbox_custom_css_js'), get('select_skin') == 'custom')
+ui.R;checkbox_custom_css_js;"includeCSS(""www/custom.css""),
+includeScript(""www/custom.js"")";get('checkbox_custom_css_js')
+ui.R;logo_import_sidebar;"    # Logos.
+    tags$div(
+      tags$p(""Projekt:""),
+      tags$img(src = ""logo/Industrie_4.0_Werkstatt.png"", style = ""height: 40px; margin-bottom: 5px;""),
+      tags$p(""Projektleitung:""),
+      # Width of sidebar: 230px.
+      tags$img(src = ""logo/TCG.jpg"", style = ""height: 40px; margin-bottom: 5px;""),
+      tags$img(src = ""logo/THD.jpg"", style = ""height: 40px; margin-bottom: 5px;""),
+      tags$p(""Gefördert durch:""),
+      tags$img(src = ""logo/EFRE.jpg"", style = ""height: 40px; margin-bottom: 5px;""),
+      tags$p(""Version: 1.0""),
+      
+      style = ""margin-left: 10px; position: absolute; bottom: 0;""
+    )";FALSE
+ui.R;logo_import_header;"    # Logos.
+    tags$li(
+      tags$div(
+        tags$p(""Projekt:""), 
+        style = ""color: white; margin: 15px""), 
+      class = ""dropdown""
+    ),
+    
+    tags$li(
+      tags$div(
+        tags$img(src = ""logo/Industrie_4.0_Werkstatt.jpg"", style = ""height: 40px""),
+        style = ""margin: 5px""
+      ),
+      class = ""dropdown""
+    ),
+    
+    tags$li(
+      tags$div(
+        tags$p(""Projektleitung:""),
+        style = ""color: white;margin: 15px""
+      ),
+      class = ""dropdown""
+    ),
+    
+    tags$li(
+      tags$div(
+        tags$img(src = ""logo/TCG.jpg"", style = ""height: 40px""),
+        tags$img(src = ""logo/THD.jpg"", style = ""height: 40px""),
+        style = ""margin: 5px""
+      ),
+      class = ""dropdown""
+    ),
+    
+    tags$li(
+      tags$div(
+        tags$p(""Gefördert durch:""),
+        style = ""color: white;margin: 15px""
+      ),
+      class = ""dropdown""
+    ),
+    
+    tags$li(
+      tags$div(
+        tags$img(src = ""logo/EFRE.jpg"", style = ""height: 40px;""),
+        style = ""margin: 5px""
+      ),
+      class = ""dropdown""
+    ),
+    
+    tags$li(
+      tags$div(
+        tags$p(""Version: 1.2""),
+        style = ""color: white;margin: 15px""
+      ),
+      class = ""dropdown""
+    )";FALSE
+ui.R;checkbox_fixed_body;"tags$head(tags$script("$(function() { $('body').addClass('fixed') })"))";!get('checkbox_custom_css_js')

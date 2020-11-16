@@ -1,0 +1,18 @@
+.shiny-output-error-validation {
+  color: red;
+}
+
+#cs{
+  display:none;
+}
+
+.shinyalert-with-scrollbar {
+  height: auto;
+  max-height: 80%;
+}
+
+.radiobtn.active, .radiobtn.active.focus {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}

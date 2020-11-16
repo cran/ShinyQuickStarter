@@ -1,0 +1,29 @@
+Package: ShinyQuickStarter
+Type: Package
+Title: Quick Setup for ShinyDashboard Apps
+Version: 1.0.0
+Authors@R: c(person("Leon", "Binder", email = "leon.binder@th-deg.de", role = c("cre", "aut")),
+             person("Bernhard", "Bauer", email = "bernhard.bauer@th-deg.de", role = c("aut")),
+             person("Michael", "Scholz", email = "michael.scholz@th-deg.de", role = c("aut")),
+             person("Bernhard", "Daffner", email = "bernhard.daffner@th-deg.de", role = c("aut")),
+             person("Jörg", "Bauer", email = "joerg.bauer@th-deg.de", role = c("aut")))
+Maintainer: Leon Binder <leon.binder@th-deg.de>
+Description: This RStudio addin enables faster creation of the project structure and design of ShinyDashboard apps. The graphical interface allows you to add certain code templates interactively. In addition to generating the basic project structure, the navigation in the app itself can also be defined or the app can be structured with modules.
+License: GPL-3
+Depends: R (>= 3.2.0)
+Imports: shiny, shinyFiles, shinyWidgets, shinyalert, miniUI,
+        colourpicker, grDevices, data.table, DT, dplyr, fs, readr,
+        rlist, shinycssloaders, shinyjs, stringi, stringr, styler,
+        utils, visNetwork
+Encoding: UTF-8
+StagedInstall: yes
+RoxygenNote: 7.1.1
+NeedsCompilation: no
+Packaged: 2020-11-11 10:36:26 UTC; Leon
+Author: Leon Binder [cre, aut],
+  Bernhard Bauer [aut],
+  Michael Scholz [aut],
+  Bernhard Daffner [aut],
+  Jörg Bauer [aut]
+Repository: CRAN
+Date/Publication: 2020-11-16 10:10:02 UTC
