@@ -226,7 +226,6 @@
 
   network = visNetwork(nodes, edges) %>%
     visEdges(arrows = "from") %>%
-    #visIgraphLayout(layout="layout_as_tree", flip.y=FALSE) %>%
     visHierarchicalLayout() %>%
     visOptions(highlightNearest = list(enabled = T, hover = F), nodesIdSelection = F) %>%
     visGroups(groupname = "App", color = "#fffff0") %>%

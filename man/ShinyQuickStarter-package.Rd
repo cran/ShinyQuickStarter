@@ -12,7 +12,7 @@ the basic project structure, the navigation in the app itself can also be define
 }
 \details{
 \tabular{ll}{ Package: \tab ShinyQuickStarter\cr Type: \tab Package\cr Version:
-\tab 1.0.0\cr Date: \tab 2020-11-11\cr License: \tab GPL-3\cr Depends: \tab
+\tab 1.0.1\cr Date: \tab 2020-11-23\cr License: \tab GPL-3\cr Depends: \tab
 R (>= 3.2.0)}
 }
 \author{
