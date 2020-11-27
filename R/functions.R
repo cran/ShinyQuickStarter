@@ -8,6 +8,8 @@
 .get_system_file_path <- function(filename) {
   if (filename == "img") {
     return(system.file("extdata", "img", package = "ShinyQuickStarter"))
+  } else if (filename == "css" | filename == "js") {
+    return(system.file("extdata", "www", paste0("custom.", filename), package = "ShinyQuickStarter"))
   } else {
     return(system.file("extdata", "templates", filename, package = "ShinyQuickStarter"))
   }
@@ -261,19 +263,17 @@
 
     # Check if all needed files exist.
     paths_needed = paths[["full"]]
+    paths_needed = paths_needed[paths_needed != paths[["project"]]]
 
     paths_existing = list.files(paths[["project"]], recursive=TRUE, include.dirs=TRUE, all.files=TRUE, full.names=TRUE)
-    if (checkbox_create_project_folder) {
-      paths_existing = append(paths[["project"]], paths_existing)      
-    }
     paths_existing = paths_existing[!str_detect(paths_existing, "modules/.*")]
     paths_existing = paths_existing[!str_detect(paths_existing, "\\.ShinyQuickStarter.*")]
     paths_existing = paths_existing[!str_detect(paths_existing, "logo")]
-
+    
     if (!all(all(paths_needed %in% paths_existing), all(paths_existing %in% paths_needed))) {
-      check[["update_possible"]] = TRUE
       check[["update_create"]] = paths_needed[!paths_needed %in% paths_existing]
       check[["update_delete"]] = paths_existing[!paths_existing %in% paths_needed]
+      check[["update_possible"]] = TRUE
     }
   } else {
     check[["create_possible"]] = TRUE

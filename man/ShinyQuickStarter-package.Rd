@@ -6,14 +6,15 @@
 \alias{ShinyQuickStarter}
 \title{Quick Setup for ShinyDashboard Apps}
 \description{
-This RStudio addin enables faster creation of the project structure and design of ShinyDashboard apps. 
+This 'RStudio' addin enables faster creation of the project structure and design of 'ShinyDashboard' apps. 
 The graphical interface allows you to add certain code templates interactively. In addition to generating 
-the basic project structure, the navigation in the app itself can also be defined or the app can be structured with modules.
+the basic project structure, the navigation in the app itself can also be defined or the app can be structured 
+with modules.
 }
 \details{
 \tabular{ll}{ Package: \tab ShinyQuickStarter\cr Type: \tab Package\cr Version:
-\tab 1.0.1\cr Date: \tab 2020-11-23\cr License: \tab GPL-3\cr Depends: \tab
-R (>= 3.2.0)}
+\tab 1.0.2\cr Date: \tab 2020-11-27\cr License: \tab GPL-3\cr Depends: \tab
+R (>= 3.6.0)}
 }
 \author{
 Leon Binder \email{leon.binder@th-deg.de}

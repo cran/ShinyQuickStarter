@@ -9,23 +9,10 @@
 #' \dontrun{shinyQuickStarter()}
 #' @export
 shinyQuickStarter <- function() {
+  app = shinyApp(
+    ui = .shiny_quick_starter_ui(),
+    server = .shiny_quick_starter_server()
+  )
   
-  warning("ShinyQuickStarter currently only works if you install it by source - 
-  otherwise there will be the error 'Couldn't normalize path in `addResourcePath`': \n
-  use:  install.packages('ShinyQuickStarter', type='source') \n
-  Do you want to proceed? [y]/n", immediate.=TRUE)
-  
-  user_input = readline()
-  
-  cat(user_input)
-  
-  if (user_input == "y" | user_input == "") {
-    shiny::addResourcePath("colourpicker-binding", 
-                           system.file("srcjs", package = "colourpicker"))
-    shiny::addResourcePath("colourpicker-lib", 
-                           system.file("www", "shared", "colourpicker", package = "colourpicker"))
-
-    runApp(list(ui = .shiny_quick_starter_ui, server = .shiny_quick_starter_server),
-           launch.browser = TRUE)
-  }
+  runApp(app, launch.browser = TRUE)
 }

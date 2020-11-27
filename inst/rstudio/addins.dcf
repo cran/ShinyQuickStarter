@@ -1,4 +1,4 @@
 Name: Setup ShinyDashboard App
 Description: Setups a ShinyDashboard project.
 Binding: shinyQuickStarter
-Interactive: FALSE
+Interactive: true
