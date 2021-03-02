@@ -4,16 +4,13 @@
 \name{ShinyQuickStarter-package}
 \alias{ShinyQuickStarter-package}
 \alias{ShinyQuickStarter}
-\title{Quick Setup for ShinyDashboard Apps}
+\title{'RStudio' Addin for Building Shiny Apps per Drag & Drop}
 \description{
-This 'RStudio' addin enables faster creation of the project structure and design of 'ShinyDashboard' apps. 
-The graphical interface allows you to add certain code templates interactively. In addition to generating 
-the basic project structure, the navigation in the app itself can also be defined or the app can be structured 
-with modules.
+This 'RStudio' addin makes the creation of 'Shiny' and 'ShinyDashboard' apps more efficient.  Besides the necessary folder structure, entire apps can be created using a drag and drop interface and customized with respect to a specific use case. The addin allows the export of the required user interface and server code at any time. By allowing the creation of modules, the addin can be used throughout the entire app development process.
 }
 \details{
 \tabular{ll}{ Package: \tab ShinyQuickStarter\cr Type: \tab Package\cr Version:
-\tab 1.0.2\cr Date: \tab 2020-11-27\cr License: \tab GPL-3\cr Depends: \tab
+\tab 2.0.0\cr Date: \tab 2020-03-02\cr License: \tab GPL-3\cr Depends: \tab
 R (>= 3.6.0)}
 }
 \author{

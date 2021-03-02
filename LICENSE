@@ -1,0 +1,114 @@
+The ShinyQuickStarter package as a whole is distributed under GPL-3 (GNU GENERAL PUBLIC
+LICENSE version 3).
+
+The ShinyQuickStarter package includes other open source software components. The following
+is a list of these components (full copies of the license agreements used by
+these components are included below):
+
+- jQuery UI (some components), https://github.com/jquery/jquery-ui
+- jQuery EasyUI, https://jeasyui.com/download/v19.php
+- driver.js, https://github.com/kamranahmedse/driver.js
+- Mak Dah Font, https://www.dafont.com/de/mak-dah.font
+
+
+
+jQuery license and license for included components from jQuery UI
+----------------------------------------------------------------------
+Copyright jQuery Foundation and other contributors, https://jquery.org/
+
+This software consists of voluntary contributions made by many
+individuals. For exact contribution history, see the revision history
+available at https://github.com/jquery/jquery-ui
+
+The following license applies to all parts of this software except as
+documented below:
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Copyright and related rights for sample code are waived via CC0. Sample
+code is defined as all source code contained within the demos directory.
+
+CC0: http://creativecommons.org/publicdomain/zero/1.0/
+
+All files located in the node_modules and external directories are
+externally maintained libraries used by this software which have their
+own licenses; we recommend you read them, as their terms may differ from
+the terms above.
+
+
+
+jQuery EasyUI License
+----------------------------------------------------------------------
+This license agreement refers to EasyUI for jQuery software - Freeware License.
+
+The EasyUI Team grants to you a limited, non-transferable and non-exclusive 
+right to use, royalty-free, copy and redistribute the software.
+
+The governmental entities are not allowed to use this freeware license.
+
+The licensee has the right to use the software for a non-profit projects/sites. 
+There are no limitations on the number of non-profit projects/sites you can use 
+the software in, you can use it on any number of non-profit projects/sites you 
+need. There is no time limit, you can use the software for any period of time you 
+need. There is no restriction while you are developing your solution. There are 
+no royalties of any kind involved.
+
+The licensee is allowed to copy and redistribute the software but you may not:
+
+a) Distribute the modified software or part(s) of it as a standalone application.
+b) Sublicense, rent, lease or lend any portion of the software as a standalone application.
+c) Modify or remove any copyright notices from any of the software files.
+
+The EasyUI Team retains all ownership rights to the software. 
+
+
+
+driver.js License
+----------------------------------------------------------------------
+The MIT License
+
+Copyright (c) Kamran Ahmed
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+
+Mak Dah Font License
+----------------------------------------------------------------------
+This font is free 100% for personal use and commercial use
+
+
+

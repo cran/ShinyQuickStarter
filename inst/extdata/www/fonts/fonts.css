@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'MakDah';
+  src: url('/fonts/MakDah.eot');
+  src: url('/fonts/MakDah.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/MakDah.woff2') format('woff2'),
+       url('/fonts/MakDah.svg#MakDah') format('svg'),
+       url('/fonts/MakDah.ttf') format('truetype'),
+       url('/fonts/MakDah.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

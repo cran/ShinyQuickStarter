@@ -1,4 +1,4 @@
-Name: Setup ShinyDashboard App
-Description: Setups a ShinyDashboard project.
+Name: Build Shiny Apps per Drag & Drop
+Description: Build Shiny Apps per Drag & Drop
 Binding: shinyQuickStarter
 Interactive: true

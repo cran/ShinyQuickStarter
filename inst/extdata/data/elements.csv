@@ -1,0 +1,296 @@
+include,package,category,function_name,has_href,box,page_type,droppable,removable,required_children,possible_add,title_id,title,description
+?,shiny,Interface builder functions,br,,,,,,,,,,
+?,shiny,Interface builder functions,code,,,,,,,,,,
+?,shiny,Interface builder functions,div,,,,,,,,,,
+?,shiny,Interface builder functions,em,,,,,,,,,,
+?,shiny,Interface builder functions,h1,,,,,,,,,,
+?,shiny,Interface builder functions,h2,,,,,,,,,,
+?,shiny,Interface builder functions,h3,,,,,,,,,,
+?,shiny,Interface builder functions,h4,,,,,,,,,,
+?,shiny,Interface builder functions,h5,,,,,,,,,,
+?,shiny,Interface builder functions,h6,,,,,,,,,,
+?,shiny,Interface builder functions,hr,,,,,,,,,,
+?,shiny,Interface builder functions,HTML,,,,,,,,,,
+?,shiny,Interface builder functions,img,,,,,,,,,,
+?,shiny,Interface builder functions,p,,,,,,,,,,
+?,shiny,Interface builder functions,pre,,,,,,,,,,
+?,shiny,Interface builder functions,span,,,,,,,,,,
+?,shiny,Interface builder functions,strong,,,,,,,,,,
+TRUE,shinyWidgets,UI Inputs,actionBttn,,outside,,,,,,"NULL,inputId",Awesome action button,"Like actionButton but awesome, via https://bttn.surge.sh/"
+?,shiny,Reactive programming,isolate,,,,,,,,,,
+?,shiny,Reactive programming,observe,,,,,,,,,,
+?,shiny,Reactive programming,observeEvent,,,,,,,,,,
+?,shiny,Reactive programming,reactive,,,,,,,,,,
+?,shiny,Reactive programming,reactiveVal,,,,,,,,,,
+?,shiny,Reactive programming,reactiveValues,,,,,,,,,,
+?,shiny,Reactive programming,reactiveValuesToList,,,,,,,,,,
+?,shiny,Rendering functions,downloadHandler,,,,,,,,,,
+?,shiny,UI Inputs,animationOptions,,,,,,,,,,
+?,shiny,UI Inputs,bookmarkButton,,,,,,,,,,
+?,shiny,UI Inputs,selectizeInput,,,,,,,,,Create a select list input control,Create a select list that can be used to choose a single or multiple items from a list of values.
+?,shiny,UI Layout,fillCol,,,fillPage,,,,,,,
+?,shiny,UI Layout,fillRow,,,"fillPage,navbarPage,bootstrapPage,dashboardPage",,,,,,,
+?,shiny,UI Layout,fixedRow,,,"fixedPage,navbarPage,bootstrapPage,dashboardPage",,,,,,,
+?,shiny,UI Layout,helpText,,,,,,,,,,
+?,shiny,UI Layout,icon,,,,,,,,,,
+?,shiny,UI Outputs,downloadButton,,,,,,,,,,
+?,shiny,UI Outputs,downloadLink,,,,,,,,,,
+?,shiny,UI Outputs,modalDialog,,,,,,,,,,
+?,shiny,UI Outputs,urlModal,,,,,,,,,,
+?,shiny,Utility functions,need,,,,,,,,,,
+?,shiny,Utility functions,req,,,,,,,,,,
+?,shiny,Utility functions,validate,,,,,,,,,,
+?,shinyWidgets,UI Inputs,airDatepicker,,,,,,,,,,
+?,shinyWidgets,UI Inputs,colorSelectorInput,,,,,,,,,,
+?,shinyWidgets,UI Inputs,currencyInput,,,,,,,,,,
+?,shinyWidgets,UI Inputs,downloadBttn,,,,,,,,,Create a download actionBttn,Create a download button with actionBttn.
+?,shinyWidgets,UI Inputs,dropdown,,,,,,,,,,
+?,shinyWidgets,UI Inputs,dropMenu,,,,TRUE,,,,,,
+?,shinyWidgets,UI Inputs,multiInput,,,,,,,,,,
+?,shinyWidgets,UI Inputs,numericRangeInput,,,,,,,,,,
+?,shinyWidgets,UI Inputs,pickerInput,,,,,,,,,Select Picker Input Control,An alternative to selectInput with plenty of options to customize it.
+?,shinyWidgets,UI Inputs,radioGroupButtons,,,,,,,,,,
+?,shinyWidgets,UI Inputs,sliderTextInput,,,,,,,,,,
+?,shinyWidgets,UI Inputs,spectrumInput,,,,,,,,,,
+FALSE,DT,UI Outputs,DTOutput,,,,,,,,,,
+FALSE,shiny,Boilerplate,shinyServer,,,,,,,,,,
+FALSE,shiny,Boilerplate,shinyUI,,,,,,,,,,
+FALSE,shiny,Bookmarking state,enableBookmarking,,,,,,,,,,
+FALSE,shiny,Bookmarking state,onBookmark,,,,,,,,,,
+FALSE,shiny,Bookmarking state,onBookmarked,,,,,,,,,,
+FALSE,shiny,Bookmarking state,onRestore,,,,,,,,,,
+FALSE,shiny,Bookmarking state,onRestored,,,,,,,,,,
+FALSE,shiny,Bookmarking state,setBookmarkExclude,,,,,,,,,,
+FALSE,shiny,Bookmarking state,showBookmarkUrlModal,,,,,,,,,,
+FALSE,shiny,Embedding,maskReactiveContext,,,,,,,,,,
+FALSE,shiny,Embedding,shinyApp,,,,,,,,,,
+FALSE,shiny,Embedding,shinyAppDir,,,,,,,,,,
+FALSE,shiny,Embedding,shinyAppFile,,,,,,,,,,
+FALSE,shiny,Extending Shiny,createWebDependency,,,,,,,,,,
+FALSE,shiny,Extending Shiny,markRenderFunction,,,,,,,,,,
+FALSE,shiny,Extending Shiny,registerInputHandler,,,,,,,,,,
+FALSE,shiny,Extending Shiny,removeInputHandler,,,,,,,,,,
+FALSE,shiny,Extending Shiny,removeResourcePath,,,,,,,,,,
+FALSE,shiny,Extending Shiny,resourcePaths,,,,,,,,,,
+FALSE,shiny,Interface builder functions,addResourcePath,,,,,,,,,,
+FALSE,shiny,Interface builder functions,bootstrapLib,,,,,,,,,,
+FALSE,shiny,Interface builder functions,htmlTemplate,,,,,,,,,,
+FALSE,shiny,Interface builder functions,includeCSS,,,,,,,,,,
+FALSE,shiny,Interface builder functions,includeHTML,,,,,,,,,,
+FALSE,shiny,Interface builder functions,includeMarkdown,,,,,,,,,,
+FALSE,shiny,Interface builder functions,includeScript,,,,,,,,,,
+FALSE,shiny,Interface builder functions,includeText,,,,,,,,,,
+FALSE,shiny,Interface builder functions,insertUI,,,,,,,,,,
+FALSE,shiny,Interface builder functions,is.singleton,,,,,,,,,,
+FALSE,shiny,Interface builder functions,removeUI,,,,,,,,,,
+FALSE,shiny,Interface builder functions,singleton,,,,,,,,,,
+FALSE,shiny,Interface builder functions,suppressDependencies,,,,,,,,,,
+FALSE,shiny,Interface builder functions,tag,,,,,,,,,,
+FALSE,shiny,Interface builder functions,tagAppenChildren,,,,,,,,,,
+FALSE,shiny,Interface builder functions,tagAppendAttributes,,,,,,,,,,
+FALSE,shiny,Interface builder functions,tagGetAttribute,,,,,,,,,,
+FALSE,shiny,Interface builder functions,tagHasAttribute,,,,,,,,,,
+FALSE,shiny,Interface builder functions,tagSetChildren,,,,,,,,,,
+FALSE,shiny,Interface builder functions,validateCssUnit,,,,,,,,,,
+FALSE,shiny,Interface builder functions,withTags,,,,,,,,,,
+FALSE,shiny,Modules,callModule,,,,,,,,,,
+FALSE,shiny,Modules,Modules,,,,,,,,,,
+FALSE,shiny,Modules,NS,,,,,,,,,,
+FALSE,shiny,Modules,ns.sep,,,,,,,,,,
+FALSE,shiny,Plot interaction,brushedPoints,,,,,,,,,,
+FALSE,shiny,Plot interaction,brushOpts,,,,,,,,,,
+FALSE,shiny,Plot interaction,clickOpts,,,,,,,,,,
+FALSE,shiny,Plot interaction,dblclickOpts,,,,,,,,,,
+FALSE,shiny,Plot interaction,hoverOpts,,,,,,,,,,
+FALSE,shiny,Plot interaction,nearPoints,,,,,,,,,,
+FALSE,shiny,Plot interaction,Plot interaction,,,,,,,,,,
+FALSE,shiny,Reactive programming,debounce throttle,,,,,,,,,,
+FALSE,shiny,Reactive programming,eactlogShow,,,,,,,,,,
+FALSE,shiny,Reactive programming,eventReactive,,,,,,,,,,
+FALSE,shiny,Reactive programming,freezeReactiveVal,,,,,,,,,,
+FALSE,shiny,Reactive programming,freezeReactiveValue,,,,,,,,,,
+FALSE,shiny,Reactive programming,getDefaultReactiveDomain,,,,,,,,,,
+FALSE,shiny,Reactive programming,invalidateLater,,,,,,,,,,
+FALSE,shiny,Reactive programming,is.reactive,,,,,,,,,,
+FALSE,shiny,Reactive programming,is.reactivevalues,,,,,,,,,,
+FALSE,shiny,Reactive programming,makeReactiveBinding,,,,,,,,,,
+FALSE,shiny,Reactive programming,onReactiveDomainEnded,,,,,,,,,,
+FALSE,shiny,Reactive programming,reactiveFileReader,,,,,,,,,,
+FALSE,shiny,Reactive programming,reactivePoll,,,,,,,,,,
+FALSE,shiny,Reactive programming,reactiveTimer,,,,,,,,,,
+FALSE,shiny,Reactive programming,reactlog ,,,,,,,,,,
+FALSE,shiny,Reactive programming,reactlogReset,,,,,,,,,,
+FALSE,shiny,Reactive programming,showReactLog,,,,,,,,,,
+FALSE,shiny,Reactive programming,withReactiveDomain,,,,,,,,,,
+FALSE,shiny,Rendering functions,createRenderFunction,,,,,,,,,,
+FALSE,shiny,Running,isRunning,,,,,,,,,,
+FALSE,shiny,Running,loadSupport,,,,,,,,,,
+FALSE,shiny,Running,Running,,,,,,,,,,
+FALSE,shiny,Running,stopApp,,,,,,,,,,
+FALSE,shiny,Running,browserViewer,,,,,,,,,,
+FALSE,shiny,Running,dialogViewer,,,,,,,,,,
+FALSE,shiny,Running,paneViewer,,,,,,,,,,
+FALSE,shiny,Running,runApp,,,,,,,,,,
+FALSE,shiny,Running,runExample,,,,,,,,,,
+FALSE,shiny,Running,runGadget,,,,,,,,,,
+FALSE,shiny,Running,runGist,,,,,,,,,,
+FALSE,shiny,Running,runGitHub,,,,,,,,,,
+FALSE,shiny,Running,runUrl,,,,,,,,,,
+FALSE,shiny,UI Inputs,appendTab,,,,,,,,,,
+FALSE,shiny,UI Inputs,getQueryString,,,,,,,,,,
+FALSE,shiny,UI Inputs,getUrlHash,,,,,,,,,,
+FALSE,shiny,UI Inputs,hideTab,,,,,,,,,,
+FALSE,shiny,UI Inputs,insertTab,,,,,,,,,,
+FALSE,shiny,UI Inputs,prependTab,,,,,,,,,,
+FALSE,shiny,UI Inputs,removeTab,,,,,,,,,,
+FALSE,shiny,UI Inputs,showTab,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateActionButton,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateCheckboxGroupInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateCheckboxInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateDateInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateDateRangeInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateNavbarPage,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateNavlistPanel,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateNumericInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateQueryString,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateRadioButtons,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateSelectInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateSelectizeInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateSliderInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateTabsetPanel,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateTextAreaInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateTextInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateVarSelectInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,updateVarSelectizeInput,,,,,,,,,,
+FALSE,shiny,UI Inputs,varSelectInput,,,,,,,,,Select variables from a data frame,Create a select list that can be used to choose a single or multiple items from the column names of a data frame.
+FALSE,shiny,UI Inputs,varSelectizeInput,,,,,,,,,Select variables from a data frame,Create a select list that can be used to choose a single or multiple items from the column names of a data frame.
+FALSE,shiny,UI Inputs,modalButton,,,,,,,,"NULL,inputId",Create a button for a modal dialog,"When clicked, a modalButton will dismiss the modal dialog."
+FALSE,shiny,UI Layout,withMathJax,,,,,,,,,,
+FALSE,shiny,UI Layout,conditionalPanel,,,,,,,,,,
+FALSE,shiny,UI Layout,absolutePanel,,,,TRUE,,,,,Panel with absolute positioning,Creates a panel whose contents are absolutely positioned.
+FALSE,shiny,UI Layout,fixedPanel,,,,,,,,,Panel with absolute positioning,Creates a panel whose contents are absolutely positioned.
+FALSE,shiny,UI Outputs,outputOptions,,,,,,,,,,
+FALSE,shiny,UI Outputs,Progress,,,,,,,,,,
+FALSE,shiny,UI Outputs,showModal,,,,,,,,,,
+FALSE,shiny,UI Outputs,showNotification,,,,,,,,,,
+FALSE,shiny,UI Outputs,verbatimTextOutput,,,,,,,,,,
+FALSE,shiny,UI Outputs,withProgress,,,,,,,,,,
+FALSE,shiny,UI Page,basicPage,,,,TRUE,FALSE,,,,,
+FALSE,shiny,Utility functions,applyInputHandlers,,,,,,,,,,
+FALSE,shiny,Utility functions,diskCache,,,,,,,,,,
+FALSE,shiny,Utility functions,exportTestValues,,,,,,,,,,
+FALSE,shiny,Utility functions,exprToFunction,,,,,,,,,,
+FALSE,shiny,Utility functions,getCurrentOutputInfo,,,,,,,,,,
+FALSE,shiny,Utility functions,getShinyOption,,,,,,,,,,
+FALSE,shiny,Utility functions,installExprFunction,,,,,,,,,,
+FALSE,shiny,Utility functions,isTruthy,,,,,,,,,,
+FALSE,shiny,Utility functions,markOutputAttrs,,,,,,,,,,
+FALSE,shiny,Utility functions,memoryCache,,,,,,,,,,
+FALSE,shiny,Utility functions,onFlush,,,,,,,,,,
+FALSE,shiny,Utility functions,onFlushed,,,,,,,,,,
+FALSE,shiny,Utility functions,onSessionEnded,,,,,,,,,,
+FALSE,shiny,Utility functions,onStop,,,,,,,,,,
+FALSE,shiny,Utility functions,parseQueryString,,,,,,,,,,
+FALSE,shiny,Utility functions,plotPNG,,,,,,,,,,
+FALSE,shiny,Utility functions,reexports,,,,,,,,,,
+FALSE,shiny,Utility functions,repeatable,,,,,,,,,,
+FALSE,shiny,Utility functions,restoreInput,,,,,,,,,,
+FALSE,shiny,Utility functions,safeError,,,,,,,,,,
+FALSE,shiny,Utility functions,serverInfo,,,,,,,,,,
+FALSE,shiny,Utility functions,session,,,,,,,,,,
+FALSE,shiny,Utility functions,setSerializer,,,,,,,,,,
+FALSE,shiny,Utility functions,shinyDeprecated,,,,,,,,,,
+FALSE,shiny,Utility functions,shinyOptions,,,,,,,,,,
+FALSE,shiny,Utility functions,sizeGrowthRatio,,,,,,,,,,
+FALSE,shiny,Utility functions,snapshotExclude,,,,,,,,,,
+FALSE,shiny,Utility functions,snapshotPreprocessInput,,,,,,,,,,
+FALSE,shiny,Utility functions,snapshotPreprocessOutput,,,,,,,,,,
+FALSE,shinyWidgets,UI Inputs,sweetalert,,,,,,,,,,
+FALSE,shinyWidgets,UI Inputs,autnumericInput,,,,,,,,,,
+FALSE,shinyWidgets,UI Inputs,circleButton,,,,,,,,,,
+TRUE,shiny,UI Inputs,actionButton,,outside,,,,,,"NULL,inputId",Action button/link,"Creates an action button or link whose value is initially zero, and increments by one each time it is pressed."
+TRUE,shinyWidgets,UI Inputs,actionGroupButtons,,outside,,,,,,"NULL,inputId",Actions Buttons Group Inputs,Create a group of actions buttons.
+TRUE,shiny,UI Inputs,actionLink,,outside,,,,,,"NULL,inputId",Action button/link,"Creates an action button or link whose value is initially zero, and increments by one each time it is pressed."
+TRUE,shinyWidgets,UI Inputs,awesomeCheckbox,,outside,,,,,,"NULL,inputId",Awesome Checkbox Input Control,Create a Font Awesome Bootstrap checkbox that can be used to specify logical values.
+TRUE,shinyWidgets,UI Inputs,awesomeCheckboxGroup,,outside,,,,,,"NULL,inputId",Awesome Checkbox Group Input Control,Create a Font Awesome Bootstrap checkbox that can be used to specify logical values.
+TRUE,shinyWidgets,UI Inputs,awesomeRadio,,outside,,,,,,"NULL,inputId",Awesome Radio Buttons Input Control,Create a set of prettier radio buttons used to select an item from a list.
+TRUE,shiny,UI Page,bootstrapPage,,outside,,TRUE,FALSE,,"tabsetPanel,tabBox,navlistPanel",,Create a Bootstrap page,"Create a Shiny UI page that loads the CSS and JavaScript for Bootstrap, and has no content in the page body (other than what you provide)."
+TRUE,shinydashboard,UI Layout,box,,outside,dashboardPage,TRUE,,,"tabBox,navlistPanel,tabsetPanel",,Create a box for the main body of a dashboard,Boxes can be used to hold content in the main body of a dashboard.
+TRUE,shinyWidgets,UI Inputs,checkboxGroupButtons,,outside,,,,,,"NULL,inputId",Buttons Group checkbox Input Control,Create buttons grouped that act like checkboxes.
+TRUE,shiny,UI Inputs,checkboxGroupInput,,outside,,,,,,"NULL,inputId",Checkbox Group Input Control,Create a group of checkboxes that can be used to toggle multiple choices independently. The server will receive the input as a character vector of the selected values.
+TRUE,shiny,UI Inputs,checkboxInput,,outside,,,,,,"NULL,inputId",Checkbox Input Control,Create a checkbox that can be used to specify logical values.
+TRUE,shiny,UI Layout,column,,outside,,TRUE,,,"tabBox,navlistPanel,tabsetPanel",,Create a column within a UI definition,Create a column for use within a fluidRow() or fixedRow()
+TRUE,shinydashboard,UI Navigation,dashboardBody,,none,dashboardPage,TRUE,FALSE,tabItems,,,The main body of a dashboard page.,The main body typically contains boxes. Another common use pattern is for the main body to contain tabItems.
+TRUE,shinydashboard,UI Navigation,dashboardHeader,TRUE,none,dashboardPage,,FALSE,,dropdownMenu,,Create a header for a dashboard page,"A dashboard header can be left blank, or it can include dropdown menu items on the right side."
+TRUE,shinydashboard,UI Page,dashboardPage,,outside,,,FALSE,"dashboardHeader,dashboardSidebar,dashboardBody",,,Dashboard page,This creates a dashboard page for use in a Shiny app.
+TRUE,shinydashboard,UI Navigation,dashboardSidebar,,none,dashboardPage,,FALSE,sidebarMenu,,,Create a dashboard sidebar.,"A dashboard sidebar typically contains a sidebarMenu, although it may also contain a sidebarSearchForm, or other Shiny inputs."
+TRUE,shiny,UI Outputs,dataTableOutput,,outside,,,,,,"NULL,outputId",Create a table output element,"Render a renderTable() or renderDataTable() within an application page. renderTable uses a standard HTML table, while renderDataTable uses the DataTables Javascript library to create an interactive table with more features."
+TRUE,shiny,UI Inputs,dateInput,,outside,,,,,,"NULL,inputId",Create date input,"Creates a text input which, when clicked on, brings up a calendar that the user can click on to select dates."
+TRUE,shiny,UI Inputs,dateRangeInput,,outside,,,,,,"NULL,inputId",Create date range input,"Creates a pair of text inputs which, when clicked on, bring up calendars that the user can click on to select dates."
+FALSE,shinyWidgets,UI Inputs,dropdownButton,,outside,,TRUE,,,,"NULL,inputId",Dropdown Button,Create a dropdown menu with Bootstrap where you can put input elements.
+TRUE,shinydashboard,UI Navigation,dropdownMenu,TRUE,none,dashboardPage,,,,"notificationItem,messageItem,taskItem",,Create a dropdown menu to place in a dashboard header,Create a dropdown menu to place in a dashboard header
+TRUE,shiny,UI Inputs,fileInput,,outside,,,,,,"NULL,inputId",File Upload Control,Create a file upload control that can be used to upload one or more files.
+TRUE,shiny,UI Page,fillPage,,outside,,TRUE,FALSE,,"tabsetPanel,tabBox,navlistPanel",,Create a page that fills the window,fillPage creates a page whose height and width always fill the available area of the browser window.
+TRUE,shiny,UI Page,fixedPage,,outside,,TRUE,FALSE,,"tabsetPanel,tabBox,navlistPanel",,Create a page with a fixed layout,"Functions for creating fixed page layouts. A fixed page layout consists of rows which in turn include columns. Rows exist for the purpose of making sure their elements appear on the same line (if the browser has adequate width). Columns exist for the purpose of defining how much horizontal space within a 12-unit wide grid its elements should occupy. Fixed pages limit their width to 940 pixels on a typical display, and 724px or 1170px on smaller and larger displays respectively."
+TRUE,shiny,UI Layout,flowLayout,,outside,,TRUE,,,"tabBox,navlistPanel,tabsetPanel",,Flow layout,"Lays out elements in a left-to-right, top-to-bottom arrangement. The elements on a given row will be top-aligned with each other. This layout will not work well with elements that have a percentage-based width (e.g. plotOutput() at its default setting of width = 100%)."
+TRUE,shiny,UI Page,fluidPage,,outside,,TRUE,FALSE,,"tabsetPanel,tabBox,navlistPanel",,Create a page with fluid layout,Functions for creating fluid page layouts. A fluid page layout consists of rows which in turn include columns. Rows exist for the purpose of making sure their elements appear on the same line (if the browser has adequate width). Columns exist for the purpose of defining how much horizontal space within a 12-unit wide grid its elements should occupy. Fluid pages scale their components in realtime to fill all available browser width.
+TRUE,shiny,UI Layout,fluidRow,,outside,"fluidPage,navbarPage,bootstrapPage,dashboardPage",TRUE,,,"tabBox,navlistPanel,tabsetPanel",,Create a page with fluid layout,Functions for creating fluid page layouts. A fluid page layout consists of rows which in turn include columns. Rows exist for the purpose of making sure their elements appear on the same line (if the browser has adequate width). Columns exist for the purpose of defining how much horizontal space within a 12-unit wide grid its elements should occupy. Fluid pages scale their components in realtime to fill all available browser width.
+TRUE,shiny,UI Outputs,htmlOutput,,outside,,,,,,"NULL,outputId",Create an HTML output element,"Render a reactive output variable as HTML within an application page. The text will be included within an HTML div tag, and is presumed to contain HTML content which should not be escaped."
+TRUE,shiny,UI Outputs,imageOutput,,outside,,,,,,"NULL,outputId",Create an plot or image output element,Render a renderPlot() or renderImage() within an application page.
+TRUE,shinydashboard,UI Layout,infoBox,,outside,dashboardPage,,,,,,Create an info box for the main body of a dashboard.,"An info box displays a large icon on the left side, and a title, value (usually a number), and an optional smaller subtitle on the right side. Info boxes are meant to be placed in the main body of a dashboard."
+TRUE,shiny,UI Layout,inputPanel,,outside,,TRUE,,,"tabBox,navlistPanel,tabsetPanel",,Input panel,"A flowLayout() with a grey border and light grey background, suitable for wrapping inputs."
+TRUE,shinyWidgets,UI Inputs,knobInput,,outside,,,,,,"NULL,inputId",Knob Input,Knob Input
+TRUE,shiny,UI Navigation,mainPanel,,outside,,TRUE,FALSE,,"tabBox,navlistPanel,tabsetPanel",,Layout a sidebar and main area,Create a layout (sidebarLayout()) with a sidebar (sidebarPanel()) and main area (mainPanel()). The sidebar is displayed with a distinct background color and typically contains input controls. The main area occupies 2/3 of the horizontal width and typically contains outputs.
+TRUE,shinyWidgets,UI Inputs,materialSwitch,,outside,,,,,,"NULL,inputId",Material Design Switch Input Control,A toggle switch to turn a selection on or off.
+TRUE,shinydashboard,UI Navigation,menuItem,TRUE,none,dashboardPage,,,,"menuItem,menuSubItem","text,tabName",Create a dashboard sidebar menu and menu items.,"A dashboardSidebar can contain a sidebarMenu. A sidebarMenu contains menuItems, and they can in turn contain menuSubItems."
+TRUE,shinydashboard,UI Navigation,menuSubItem,TRUE,none,dashboardPage,,,,,"text,tabName",Create a dashboard sidebar menu and menu items.,"A dashboardSidebar can contain a sidebarMenu. A sidebarMenu contains menuItems, and they can in turn contain menuSubItems."
+TRUE,shinydashboard,UI Navigation,messageItem,TRUE,none,dashboardPage,,,,,,Create a message item to place in a dropdown message menu,Create a message item to place in a dropdown message menu
+TRUE,shiny,UI Navigation,navbarMenu,TRUE,none,,,,tabPanel,tabPanel,"title,NULL",Create a page with a top level navigation bar,Create a page that contains a top level navigation bar that can be used to toggle a set of tabPanel() elements.
+TRUE,shiny,UI Page,navbarPage,,outside,,,FALSE,tabPanel,"navbarMenu,tabPanel",,Create a page with a top level navigation bar,Create a page that contains a top level navigation bar that can be used to toggle a set of tabPanel() elements.
+TRUE,shiny,UI Navigation,navlistPanel,,outside,,,,tabPanel,tabPanel,,Create a navigation list panel,Create a navigation list panel that provides a list of links on the left which navigate to a set of tabPanels displayed to the right.
+TRUE,shinydashboard,UI Navigation,notificationItem,TRUE,none,dashboardPage,,,,,,Create a notification item to place in a dropdown notification menu,Create a notification item to place in a dropdown notification menu
+TRUE,shiny,UI Inputs,numericInput,,outside,,,,,,"NULL,inputId",Create a numeric input control,Create an input control for entry of numeric values
+TRUE,shiny,UI Inputs,passwordInput,,outside,,,,,,"NULL,inputId",Create a password input control,Create an password control for entry of passwords.
+TRUE,plotly,UI Outputs,plotlyOutput,,outside,,,,,,"NULL,outputId",Shiny bindings for plotly,Output and render functions for using plotly within Shiny applications and interactive Rmd documents.
+TRUE,shiny,UI Outputs,plotOutput,,outside,,,,,,"NULL,outputId",Create an plot or image output element,Render a renderPlot() or renderImage() within an application page.
+TRUE,shinyWidgets,UI Inputs,prettyCheckbox,,outside,,,,,,"NULL,inputId",Pretty Checkbox Input,Create a pretty checkbox that can be used to specify logical values.
+TRUE,shinyWidgets,UI Inputs,prettyCheckboxGroup,,outside,,,,,,"NULL,inputId",Pretty Checkbox Group Input Control,Create a group of pretty checkboxes that can be used to toggle multiple choices independently. The server will receive the input as a character vector of the selected values.
+TRUE,shinyWidgets,UI Inputs,prettyRadioButtons,,outside,,,,,,"NULL,inputId",Pretty radio Buttons Input Control,Create a set of radio buttons used to select an item from a list.
+TRUE,shinyWidgets,UI Inputs,prettySwitch,,outside,,,,,,"NULL,inputId",Pretty Switch Input,A toggle switch to replace checkbox
+TRUE,shinyWidgets,UI Inputs,prettyToggle,,outside,,,,,,"NULL,inputId",Pretty Toggle Input,A single checkbox that changes appearance if checked or not.
+TRUE,shiny,UI Inputs,radioButtons,,outside,,,,,,"NULL,inputId",Create radio buttons,Create a set of radio buttons used to select an item from a list.
+TRUE,shinyWidgets,UI Inputs,searchInput,,outside,,,,,,"NULL,inputId",Search Input,A text input only triggered when Enter key is pressed or search button clicked
+TRUE,shiny,UI Inputs,selectInput,,outside,,,,,,"NULL,inputId",Create a select list input control,Create a select list that can be used to choose a single or multiple items from a list of values.
+TRUE,shiny,UI Layout,sidebarLayout,,outside,,,,"sidebarPanel,mainPanel",,,Layout a sidebar and main area,Create a layout (sidebarLayout()) with a sidebar (sidebarPanel()) and main area (mainPanel()). The sidebar is displayed with a distinct background color and typically contains input controls. The main area occupies 2/3 of the horizontal width and typically contains outputs.
+TRUE,shinydashboard,UI Navigation,sidebarMenu,,none,dashboardPage,,FALSE,menuItem,"menuItem,sidebarSearchForm","NULL,id",Create a dashboard sidebar menu and menu items.,"A dashboardSidebar can contain a sidebarMenu. A sidebarMenu contains menuItems, and they can in turn contain menuSubItems."
+TRUE,shiny,UI Navigation,sidebarPanel,,outside,,TRUE,FALSE,,"tabBox,navlistPanel,tabsetPanel",,Layout a sidebar and main area,Create a layout (sidebarLayout()) with a sidebar (sidebarPanel()) and main area (mainPanel()). The sidebar is displayed with a distinct background color and typically contains input controls. The main area occupies 2/3 of the horizontal width and typically contains outputs.
+TRUE,shinydashboard,UI Navigation,sidebarSearchForm,,none,dashboardPage,,,,,"NULL,inputId",Create a search form to place in a sidebar,A search form consists of a text input field and a search button.
+TRUE,shiny,UI Inputs,sliderInput,,outside,,,,,,"NULL,inputId",Slider Input Widget,Constructs a slider widget to select a numeric value from a range.
+TRUE,shiny,UI Layout,splitLayout,,outside,,TRUE,,,"tabBox,navlistPanel,tabsetPanel",,Split layout,"Lays out elements horizontally, dividing the available horizontal space into equal parts (by default)."
+FALSE,shiny,UI Inputs,submitButton,,outside,,,,,,"NULL,inputId",Create a submit button,"Create a submit button for an app. Apps that include a submit button do not automatically update their outputs when inputs change, rather they wait until the user explicitly clicks the submit button. The use of submitButton is generally discouraged in favor of the more versatile actionButton() (see details below)."
+TRUE,shinyWidgets,UI Inputs,switchInput,,outside,,,,,,"NULL,inputId",Bootstrap Switch Input Control,Create a toggle switch.
+TRUE,shinydashboard,UI Navigation,tabBox,,outside,dashboardPage,,,tabPanel,tabPanel,"title,id",Create a tabbed box,Create a tabbed box
+TRUE,shinydashboard,UI Navigation,tabItem,,inside,dashboardPage,TRUE,,,"tabBox,navlistPanel,tabsetPanel","NULL,tabName",One tab to put inside a tab items container,One tab to put inside a tab items container
+TRUE,shinydashboard,UI Navigation,tabItems,,none,dashboardPage,,FALSE,tabItem,tabItem,,A container for tab items,A container for tab items
+TRUE,shiny,UI Outputs,tableOutput,,outside,,,,,,"NULL,outputId",Create a table output element,"Render a renderTable() or renderDataTable() within an application page. renderTable uses a standard HTML table, while renderDataTable uses the DataTables Javascript library to create an interactive table with more features."
+TRUE,shinydashboard,UI Navigation,tabPanel,TRUE,inside,dashboardPage,TRUE,,,"tabBox,navlistPanel,tabsetPanel","title,value",Create a tab panel,Create a tab panel
+TRUE,shiny,UI Navigation,tabsetPanel,,outside,,,,tabPanel,tabPanel,"NULL,id",Create a tabset panel,Create a tabset that contains tabPanel() elements. Tabsets are useful for dividing output into multiple independently viewable sections.
+TRUE,shiny,UI Page,tagList,,outside,,TRUE,FALSE,,"tabsetPanel,tabBox,navlistPanel",,HTML Tag Object,tag() creates an HTML tag definition. Note that all of the valid HTML5 tags are already defined in the tags environment so these functions should only be used to generate additional tags. tagAppendChild() and tagList() are for supporting package authors who wish to create their own sets of tags; see the contents of bootstrap.R for examples.
+TRUE,shinydashboard,UI Navigation,taskItem,TRUE,none,dashboardPage,,,,,,Create a task item to place in a dropdown task menu,Create a task item to place in a dropdown task menu
+TRUE,shiny,UI Inputs,textAreaInput,,outside,,,,,,"NULL,inputId",Create a textarea input control,Create a textarea input control for entry of unstructured text values.
+TRUE,shiny,UI Inputs,textInput,,outside,,,,,,"NULL,inputId",Create a text input control,Create an input control for entry of unstructured text values
+TRUE,shiny,UI Outputs,textOutput,,outside,,,,,,"NULL,outputId",Create a text output element,Render a reactive output variable as text within an application page. textOutput() is usually paired with renderText() and puts regular text in <div> or <span>; verbatimTextOutput() is usually paired with renderPrint() and provides fixed-width text in a <pre>.
+TRUE,shiny,UI Layout,titlePanel,,outside,,,,,,,Create a panel containing an application title.,Create a panel containing an application title.
+TRUE,shiny,UI Outputs,uiOutput,,outside,,,,,,"NULL,outputId",Create an HTML output element,"Render a reactive output variable as HTML within an application page. The text will be included within an HTML div tag, and is presumed to contain HTML content which should not be escaped."
+TRUE,shinydashboard,UI Layout,valueBox,,outside,dashboardPage,,,,,,Create a value box for the main body of a dashboard.,"A value box displays a value (usually a number) in large text, with a smaller subtitle beneath, and a large icon on the right side. Value boxes are meant to be placed in the main body of a dashboard."
+TRUE,shiny,UI Layout,verticalLayout,,outside,,TRUE,,,"tabBox,navlistPanel,tabsetPanel",,Lay out UI elements vertically,Create a container that includes one or more rows of content (each element passed to the container will appear on its own line in the UI)
+TRUE,shiny,UI Layout,wellPanel,,outside,,TRUE,,,"tabBox,navlistPanel,tabsetPanel",,Create a well panel,Creates a panel with a slightly inset border and grey background. Equivalent to Bootstraps well CSS class.
+X,plotly,Rendering functions,renderPlotly,,,,,,,,,Shiny bindings for plotly,Output and render functions for using plotly within Shiny applications and interactive Rmd documents.
+X,shiny,Rendering functions,renderCachedPlot,,,,,,,,,,
+X,shiny,Rendering functions,renderDataTable,,,,,,,,,,
+X,shiny,Rendering functions,renderImage,,,,,,,,,,
+X,shiny,Rendering functions,renderPlot,,,,,,,,,,
+X,shiny,Rendering functions,renderPrint,,,,,,,,,,
+X,shiny,Rendering functions,renderTable,,,,,,,,,,
+X,shiny,Rendering functions,renderText,,,,,,,,,,
+X,shiny,Rendering functions,renderUI,,,,,,,,,,

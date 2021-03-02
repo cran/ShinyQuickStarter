@@ -1,0 +1,276 @@
+/* Logo. */
+.sqs_logo {
+  font-family: MakDah;
+  right: 20px;
+  position: absolute;
+  color: #3c8dbc;
+  font-size: 2em;
+  bottom: 7px;
+}
+
+
+/* Badge color. */
+.UI_Layout {
+  margin-top: 2px;
+  font-size: 15px;
+  display: inline-block;
+  background-color: #0275d8;
+}
+
+.UI_Inputs {
+  margin-top: 2px;
+  font-size: 15px;
+  display: inline-block;
+  background-color: #d9534f;
+}
+
+.UI_Outputs {
+  margin-top: 2px;
+  font-size: 15px;
+  display: inline-block;
+  background-color: #f0ad4e;
+}
+
+.sqs_ui_type {
+  margin: 5px;
+  color: white;
+  padding: 3px;
+}
+
+
+/* Dropped UI elements. */
+.sqs_ui_element {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.sqs_ui_element_header {
+  border-style: solid;
+  display: inline-block;
+  padding: 3px;
+  border-color: #D8D8D8;
+  border-width: 1px;
+  width: 100%;
+}
+
+.sqs_ui_element_body {
+  border-style: solid;
+  padding: 3px;
+  border-color: #D8D8D8;
+  border-width: 1px;
+  width: 100%;
+}
+
+.sqs_over {
+  background: #FBEC88;
+}
+
+.sqs_highlight {
+  outline-style: solid;
+  outline-color: red;
+  outline-width: 2px;
+}
+
+.sqs_validation {
+  color: red;
+}
+
+
+/* Custom design changes of addin. */
+.fullscreen {
+  padding: 0px;
+  margin: 0px;
+}
+
+.checkbox { border: None; }
+
+#sqs_page_type + button p { margin: 0px; }
+
+#edit_mode_panel > .form-group { 
+  margin: 0px 5px;
+}
+
+.panel_header_2 {
+  display: flex;
+  background-color: #F2F2F2;
+  color: #777;
+  position: relative;
+  padding: 10px;
+}
+
+div[sqs_id="drop_zone"] {
+  width: 100%;
+  min-height: 89%;
+  padding: 2px;
+}
+
+div[sqs_id="drop_zone_content"] {
+  width: 100%;
+}
+
+#ui_options, #server_options {
+  padding: 10px 10px;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#ui_code, #server_code, #module_code {
+  padding: 10px 5px;
+}
+
+div[sqs_id=export_tabs_folders], div[sqs_id=export_tabs_code] {
+  padding: 10px;
+}
+
+.panel-tool a {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    background-color: #e2e2e2;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+
+/* Custom design changes of UI Elements. */
+.bootstrap-switch-container > span { font-size: 14px; }
+
+div[sqs_type='fluidRow'] { width: 100%; }
+div[sqs_type='fluidRow'] .row { margin: 0px; }
+div[sqs_type='fluidRow'] .sqs_ui_element_body { min-height: 50px; }
+
+/*div[sqs_type='column'] .sqs_ui_element_body > div { width: 100%; }*/
+div[sqs_type='column'] .sqs_ui_element_body { min-height: 50px; }
+
+div[sqs_type='tabBox'] .sqs_ui_element_body { min-height: 50px; }
+
+div[sqs_type='tabPanel'] { width: 100%; }
+div[sqs_type='tabPanel'] .sqs_ui_element_body { min-height: 50px; }
+
+div[sqs_type="dataTableOutput"] { width: 100%; }
+
+div[sqs_type="tagList"], div[sqs_type="tagList"] .sqs_ui_element_body,
+div[sqs_type="bootstrapPage"], div[sqs_type="bootstrapPage"] .sqs_ui_element_body,
+div[sqs_type="fixedPage"], div[sqs_type="fixedPage"] .sqs_ui_element_body,
+div[sqs_type="fluidPage"], div[sqs_type="fluidPage"] .sqs_ui_element_body,
+div[sqs_type="fillPage"], div[sqs_type="fillPage"] .sqs_ui_element_body, 
+div[sqs_type="navbarPage"], div[sqs_type="navbarPage"] .sqs_ui_element_body,
+div[sqs_type="dashboardPage"], div[sqs_type="dashboardPage"] .sqs_ui_element_body,
+div[sqs_type="tabItem"], div[sqs_type="tabItem"] .sqs_ui_element_body,
+div[sqs_type="sidebarLayout"], div[sqs_type="sidebarLayout"] .sqs_ui_element_body,
+div[sqs_type="verticalLayout"], div[sqs_type="verticalLayout"] .sqs_ui_element_body,
+div[sqs_type="splitLayout"], div[sqs_type="splitLayout"] .sqs_ui_element_body,
+div[sqs_type="flowLayout"], div[sqs_type="flowLayout"] .sqs_ui_element_body,
+div[sqs_type="navlistPanel"], div[sqs_type="navlistPanel"] .sqs_ui_element_body, 
+div[sqs_type="dashboardBody"], div[sqs_type="dashboardBody"] .sqs_ui_element_body {
+  width: 100%;
+  height: 100%;
+}
+
+
+div[sqs_type="titlePanel"], div[sqs_type="titlePanel"] .sqs_ui_element_body,
+div[sqs_type="inputPanel"], div[sqs_type="inputPanel"] .sqs_ui_element_body,
+div[sqs_type="wellPanel"], div[sqs_type="wellPanel"] .sqs_ui_element_body {
+  width: 100%;
+}
+
+
+div[sqs_type="sidebarLayout"] .row,
+div[sqs_type="navlistPanel"] .row,
+div[sqs_type="dataTableOutput"] .row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+.stop_addin_button {
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  top: 0px;
+}
+
+.stop_addin_button button, 
+.stop_addin_button button:hover, 
+.stop_addin_button button:focus {
+  border: none;
+  background-color: transparent;
+  color: #39c;
+  font-weight: bold;
+  font-size: 25px;
+  border-top-width: 0px;
+  border-top-style: solid;
+  padding-top: 0px;
+  padding-bottom: 0px
+}
+
+#shiny-disconnected-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #999;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 10000000001 !important;
+  pointer-events: none;
+}
+
+
+/* Info Tour. */
+.wide_step_popover {
+  min-width: 45% !important;
+}
+
+.right_tabs_popover {
+  top: 4px !important;
+}
+
+.right_tabs_ul_popover {
+  top: 35px !important;
+}
+
+.info_step_number {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.tour_sqs_ui_element_header {
+  border-style: solid;
+  display: inline-block;
+  padding: 3px;
+  border-color: #D8D8D8;
+  border-width: 1px;
+}
+
+
+/* Tabs. */
+.tabs-header {
+  background-color: #F2F2F2;
+}
+
+.tabs li .tabs-inner {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.tabs li.tabs-selected .tabs-inner {
+  color: #39c;
+  background: transparent;
+  border-bottom: 2px solid;
+}
+
+
+/* pickerInput groupings */
+.dropdown-header.optgroup-1,
+.dropdown-header.optgroup-2,
+.dropdown-header.optgroup-3 {
+    font-size: 14px;
+    font-weight: bold;
+}
