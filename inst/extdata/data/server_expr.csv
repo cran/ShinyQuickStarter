@@ -1,180 +1,198 @@
 ui_function,server_function,expr_package,name,expr
-htmlOutput,renderUI,,example,"HTML(""This is an example for a <code>htmlOutput</code>."")"
+htmlOutput,renderUI,,example,HTML('This is an example for a <code>htmlOutput</code>.')
 uiOutput,renderUI,,example,"tagList(
-    h1(""Title""),
-    p(""This is an example for a""),
-    code(""uiOutput"")
+    h1('Title'),
+    p('This is an example for a'),
+    code('uiOutput')
 )"
 tableOutput,renderTable,,example,iris
 dataTableOutput,renderDataTable,,example,iris
-textOutput,renderText,,example,"""This is an example for a textOutput."""
-imageOutput,renderImage,,example,"outfile = tempfile(fileext="".png"")
+textOutput,renderText,,example,'This is an example for a textOutput.'
+imageOutput,renderImage,,example,"outfile = tempfile(fileext='.png')
 png(outfile, width=400, height=400)
 hist(runif(100, 0, 1))
 dev.off()
-list(src = outfile, alt = ""This is alternate text"")"
+list(src = outfile, alt = 'This is alternate text')"
+downloadButton,downloadHandler,,example,"filename = function() {
+    paste0('data-', Sys.Date(), '.csv')
+},
+content = function(file) {
+    write.csv(data, file)
+}"
+downloadLink,downloadHandler,,example,"filename = function() {
+    paste0('data-', Sys.Date(), '.csv')
+},
+content = function(file) {
+    write.csv(data, file)
+}"
+downloadBttn,downloadHandler,,example,"filename = function() {
+    paste0('data-', Sys.Date(), '.csv')
+},
+content = function(file) {
+    write.csv(data, file)
+}"
 plotlyOutput,renderPlotly,plotly,Basic Scatter Plot,"fig = plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, 
-              type=""scatter"", mode=""markers"") %>% 
-  layout(title = ""Sepal Length vs. Petal Length"",
-         xaxis = list(title=""Sepal Length""), 
-         yaxis = list(title=""Petal Length""))
+              type='scatter', mode='markers') %>% 
+  layout(title = 'Sepal Length vs. Petal Length',
+         xaxis = list(title='Sepal Length'), 
+         yaxis = list(title='Petal Length'))
 fig"
 plotOutput,renderPlot,ggplot2,Basic Scatter Plot,"plot = ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length)) +
   geom_point() +
-  labs(title = ""Sepal Length vs. Petal Length"",
-       x = ""Sepal Length"",
-       y = ""Petal length"")
+  labs(title = 'Sepal Length vs. Petal Length',
+       x = 'Sepal Length',
+       y = 'Petal length')
 plot"
 plotlyOutput,renderPlotly,plotly,Grouped Scatter Plot,"fig = plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, color = ~Species, 
-              type=""scatter"", mode=""markers"") %>% 
-  layout(title = ""Sepal Length vs. Petal Length"",
-         xaxis = list(title=""Sepal Length""), 
-         yaxis = list(title=""Petal Length""),
-         legend = list(orientation=""v"", title=list(text=""<b>Species</b>"")))
+              type='scatter', mode='markers') %>% 
+  layout(title = 'Sepal Length vs. Petal Length',
+         xaxis = list(title='Sepal Length'), 
+         yaxis = list(title='Petal Length'),
+         legend = list(orientation='v', title=list(text='<b>Species</b>')))
 fig"
 plotOutput,renderPlot,ggplot2,Grouped Scatter Plot,"plot = ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, color=Species)) +
   geom_point() +
-  labs(title = ""Sepal Length vs. Petal Length"",
-       x = ""Sepal Length"",
-       y = ""Petal length"")
+  labs(title = 'Sepal Length vs. Petal Length',
+       x = 'Sepal Length',
+       y = 'Petal length')
 plot"
-plotlyOutput,renderPlotly,plotly,Basic Line Plot,"fig = plot_ly(data = economics, x = ~date, y = ~psavert, type=""scatter"", mode=""lines"") %>% 
-  layout(title = ""Personal Savings Rate"",
-         xaxis = list(title = ""Month""), 
-         yaxis = list(title = ""Personal Savings (%)""))
+plotlyOutput,renderPlotly,plotly,Basic Line Plot,"fig = plot_ly(data = economics, x = ~date, y = ~psavert, type='scatter', mode='lines') %>% 
+  layout(title = 'Personal Savings Rate',
+         xaxis = list(title = 'Month'), 
+         yaxis = list(title = 'Personal Savings (%)'))
 fig"
 plotOutput,renderPlot,ggplot2,Basic Line Plot,"plot = ggplot(data = economics, aes(x = date, y = psavert)) + 
   geom_line() +
-  labs(title = ""Personal Savings Rate"",
-       x = ""Month"",
-       y = ""Personal Savings (%)"")
+  labs(title = 'Personal Savings Rate',
+       x = 'Month',
+       y = 'Personal Savings (%)')
 plot"
 plotlyOutput,renderPlotly,plotly,Multiple Line Plots,"fig = plot_ly(data = Orange, x = ~age, y=~circumference, color=~Tree,
-              type=""scatter"", mode=""lines"") %>%
-  layout(title = ""Orange Tree Growth"",
-         xaxis = list(title=""Tree age (days since 1968/12/31)""), 
-         yaxis = list(title=""Tree circumference (mm)""),
-         legend = list(orientation=""v"", title=list(text=""<b>Tree</b>"")))
+              type='scatter', mode='lines') %>%
+  layout(title = 'Orange Tree Growth',
+         xaxis = list(title='Tree age (days since 1968/12/31)'), 
+         yaxis = list(title='Tree circumference (mm)'),
+         legend = list(orientation='v', title=list(text='<b>Tree</b>')))
 fig"
 plotOutput,renderPlot,ggplot2,Multiple Line Plots,"plot = ggplot(data = Orange, aes(x = age, y = circumference, color=Tree)) +
   geom_line() +
-  labs(title = ""Orange Tree Growth"",
-       x = ""Tree age (days since 1968/12/31)"",
-       y = ""Tree circumference (mm)"")
+  labs(title = 'Orange Tree Growth',
+       x = 'Tree age (days since 1968/12/31)',
+       y = 'Tree circumference (mm)')
 plot"
 plotlyOutput,renderPlotly,plotly,Basic Bar Plot,"data = as.data.frame(table(mpg$class))
-colnames(data) = c(""class"", ""freq"")
-fig = plot_ly(data = data, x = ~class, y = ~freq, type = ""bar"") %>%
-  layout(title = ""Frequency of car classes"",
-         xaxis = list(title=""Car class""), 
-         yaxis = list(title=""Frequency""))
+colnames(data) = c('class', 'freq')
+fig = plot_ly(data = data, x = ~class, y = ~freq, type = 'bar') %>%
+  layout(title = 'Frequency of car classes',
+         xaxis = list(title='Car class'), 
+         yaxis = list(title='Frequency'))
 fig"
 plotOutput,renderPlot,ggplot2,Basic Bar Plot,"plot = ggplot(data = mpg, aes(x = class)) +
   geom_bar() +
-  labs(title = ""Frequency of car classes"",
-       x = ""Car class"",
-       y = ""Frequency"")
+  labs(title = 'Frequency of car classes',
+       x = 'Car class',
+       y = 'Frequency')
 plot"
 plotlyOutput,renderPlotly,plotly,Grouped Bar Plot,"data = as.data.frame(table(mpg$class, mpg$cyl))
-colnames(data) = c(""class"", ""cyl"", ""freq"")
-data = reshape(data, idvar = ""class"", timevar = ""cyl"", direction = ""wide"")
-fig = plot_ly(data = data, x = ~class, y = ~freq.4, name = ""4"", type = ""bar"") %>%
-  add_trace(y = ~freq.5, name = ""5"") %>%
-  add_trace(y = ~freq.6, name = ""6"") %>%
-  add_trace(y = ~freq.8, name = ""8"") %>%
-  layout(barmode = ""group"",
-         title = ""Frequency of car classes/number of cylinders"",
-         xaxis = list(title=""Car class/Number of cylinders""), 
-         yaxis = list(title=""Frequency""),
-         legend = list(orientation=""v"", title=list(text=""<b>Number of cyclinders</b>"")))
+colnames(data) = c('class', 'cyl', 'freq')
+data = reshape(data, idvar = 'class', timevar = 'cyl', direction = 'wide')
+fig = plot_ly(data = data, x = ~class, y = ~freq.4, name = '4', type = 'bar') %>%
+  add_trace(y = ~freq.5, name = '5') %>%
+  add_trace(y = ~freq.6, name = '6') %>%
+  add_trace(y = ~freq.8, name = '8') %>%
+  layout(barmode = 'group',
+         title = 'Frequency of car classes/number of cylinders',
+         xaxis = list(title='Car class/Number of cylinders'), 
+         yaxis = list(title='Frequency'),
+         legend = list(orientation='v', title=list(text='<b>Number of cyclinders</b>')))
 fig"
 plotOutput,renderPlot,ggplot2,Grouped Bar Plot,"plot = ggplot(mpg, aes(x = class, fill = as.factor(cyl))) +
-  geom_bar(position = ""dodge"") +
-  labs(title = ""Frequency of car classes/number of cylinders"",
-       x = ""Car class/Number ofcylinders"",
-       y = ""Frequency"",
-       fill = ""Number of cylinders"")
+  geom_bar(position = 'dodge') +
+  labs(title = 'Frequency of car classes/number of cylinders',
+       x = 'Car class/Number ofcylinders',
+       y = 'Frequency',
+       fill = 'Number of cylinders')
 plot"
 plotlyOutput,renderPlotly,plotly,Stacked Bar Plot,"data = as.data.frame(table(mpg$class, mpg$cyl))
-colnames(data) = c(""class"", ""cyl"", ""freq"")
-data = reshape(data, idvar = ""class"", timevar = ""cyl"", direction = ""wide"")
-fig = plot_ly(data = data, x = ~class, y = ~freq.4, name = ""4"", type = ""bar"") %>%
-  add_trace(y = ~freq.5, name = ""5"") %>%
-  add_trace(y = ~freq.6, name = ""6"") %>%
-  add_trace(y = ~freq.8, name = ""8"") %>%
-  layout(barmode = ""stack"",
-         title = ""Frequency of car classes/number of cylinders"",
-         xaxis = list(title=""Car class/Number ofcylinders""), 
-         yaxis = list(title=""Frequency""),
-         legend = list(orientation=""v"", title=list(text=""<b>Number of cyclinders</b>"")))
+colnames(data) = c('class', 'cyl', 'freq')
+data = reshape(data, idvar = 'class', timevar = 'cyl', direction = 'wide')
+fig = plot_ly(data = data, x = ~class, y = ~freq.4, name = '4', type = 'bar') %>%
+  add_trace(y = ~freq.5, name = '5') %>%
+  add_trace(y = ~freq.6, name = '6') %>%
+  add_trace(y = ~freq.8, name = '8') %>%
+  layout(barmode = 'stack',
+         title = 'Frequency of car classes/number of cylinders',
+         xaxis = list(title='Car class/Number ofcylinders'), 
+         yaxis = list(title='Frequency'),
+         legend = list(orientation='v', title=list(text='<b>Number of cyclinders</b>')))
 fig"
 plotOutput,renderPlot,ggplot2,Stacked Bar Plot,"plot = ggplot(mpg, aes(x = class, fill = as.factor(cyl))) +
   geom_bar() +
-  labs(title = ""Frequency of car classes/number of cylinders"",
-       x = ""Car class/Number ofcylinders"",
-       y = ""Frequency"",
-       fill = ""Number of cylinders"")
+  labs(title = 'Frequency of car classes/number of cylinders',
+       x = 'Car class/Number ofcylinders',
+       y = 'Frequency',
+       fill = 'Number of cylinders')
 plot"
 plotlyOutput,renderPlotly,plotly,Basic Pie Chart,"data = data.frame(
-  ""Categorie"" = rownames(USPersonalExpenditure), 
+  'Categorie' = rownames(USPersonalExpenditure), 
   USPersonalExpenditure
 )
-data = data[, c(""Categorie"", ""X1960"")]
-fig = plot_ly(data = data, labels = ~Categorie, values = ~X1960, type = ""pie"") %>% 
-  layout(title = ""United States Personal Expenditures by Categories in 1960"",
+data = data[, c('Categorie', 'X1960')]
+fig = plot_ly(data = data, labels = ~Categorie, values = ~X1960, type = 'pie') %>% 
+  layout(title = 'United States Personal Expenditures by Categories in 1960',
          xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
          yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
 fig"
 plotOutput,renderPlot,ggplot2,Basic Pie Chart,"data = data.frame(
-  ""Categorie"" = rownames(USPersonalExpenditure), 
+  'Categorie' = rownames(USPersonalExpenditure), 
   USPersonalExpenditure
 )
-data = data[, c(""Categorie"", ""X1960"")]
-plot = ggplot(data = data, aes(x = "" "", y = X1960, fill = Categorie)) +
-  geom_bar(stat=""identity"", width=1) +
-  coord_polar(""y"", start=0) +
-  geom_text(aes(label = paste0(X1960, ""%"")), position = position_stack(vjust=0.5)) +
+data = data[, c('Categorie', 'X1960')]
+plot = ggplot(data = data, aes(x = ' ', y = X1960, fill = Categorie)) +
+  geom_bar(stat='identity', width=1) +
+  coord_polar('y', start=0) +
+  geom_text(aes(label = paste0(X1960, '%')), position = position_stack(vjust=0.5)) +
   labs(x = NULL, y = NULL) +
   theme_classic() +
   theme(axis.line = element_blank(),
         axis.text = element_blank(),
         axis.ticks = element_blank())
 plot"
-plotlyOutput,renderPlotly,plotly,Basic Boxplot,"fig = plot_ly(data = mpg, x = ~class, y = ~hwy, type = ""box"") %>%
-  layout(title = ""Highway miles per gallon per car class"",
-         xaxis = list(title=""Car class""), 
-         yaxis = list(title=""Highway miles per gallon""))
+plotlyOutput,renderPlotly,plotly,Basic Boxplot,"fig = plot_ly(data = mpg, x = ~class, y = ~hwy, type = 'box') %>%
+  layout(title = 'Highway miles per gallon per car class',
+         xaxis = list(title='Car class'), 
+         yaxis = list(title='Highway miles per gallon'))
 fig"
 plotOutput,renderPlot,ggplot2,Basic Boxplot,"plot = ggplot(mpg, aes(x = class, y = hwy)) +
   geom_boxplot() +
-  labs(title = ""Highway miles per gallon per car class"",
-       x = ""Car class"",
-       y = ""Highway miles per gallon"")
+  labs(title = 'Highway miles per gallon per car class',
+       x = 'Car class',
+       y = 'Highway miles per gallon')
 plot"
-plotlyOutput,renderPlotly,plotly,Basic Histogram,"fig = plot_ly(data = diamonds, x = ~carat, type = ""histogram"", bingroup = 0.1) %>%
-  layout(title = ""Diamond weight"",
-         xaxis = list(title=""Diamond weight""), 
-         yaxis = list(title=""Frequency""))
+plotlyOutput,renderPlotly,plotly,Basic Histogram,"fig = plot_ly(data = diamonds, x = ~carat, type = 'histogram', bingroup = 0.1) %>%
+  layout(title = 'Diamond weight',
+         xaxis = list(title='Diamond weight'), 
+         yaxis = list(title='Frequency'))
 fig"
 plotOutput,renderPlot,ggplot2,Basic Histogram,"plot = ggplot(data = diamonds, aes(x = carat)) +
   geom_histogram(binwidth = 0.1) +
-  labs(title = ""Diamond weight"",
-       x = ""Diamond weight"",
-       y = ""Frequency"")
+  labs(title = 'Diamond weight',
+       x = 'Diamond weight',
+       y = 'Frequency')
 plot"
-plotlyOutput,renderPlotly,plotly,Stacked Histograms,"fig = plot_ly(data = diamonds, x = ~price, color = ~cut, type = ""histogram"", bingroup = 0.1) %>%
-  layout(barmode = ""stack"",
-         title = ""Diamond price by quality"",
-         xaxis = list(title=""Price in US Dollars""), 
-         yaxis = list(title=""Frequency""),
-         legend = list(orientation=""v"", title=list(text=""<b>Quality</b>"")))
+plotlyOutput,renderPlotly,plotly,Stacked Histograms,"fig = plot_ly(data = diamonds, x = ~price, color = ~cut, type = 'histogram', bingroup = 0.1) %>%
+  layout(barmode = 'stack',
+         title = 'Diamond price by quality',
+         xaxis = list(title='Price in US Dollars'), 
+         yaxis = list(title='Frequency'),
+         legend = list(orientation='v', title=list(text='<b>Quality</b>')))
 fig"
 plotOutput,renderPlot,ggplot2,Stacked Histograms,"plot = ggplot(data = diamonds, aes(x = price, fill = cut)) +
   geom_histogram(binwidth = 500) +
-  labs(title = ""Diamond price by quality"",
-       x = ""Price in US Dollars"",
-       y = ""Frequency"",
-       fill = ""Quality"")
+  labs(title = 'Diamond price by quality',
+       x = 'Price in US Dollars',
+       y = 'Frequency',
+       fill = 'Quality')
 plot"
 plotlyOutput,renderPlotly,plotly,Basic Heatmap,"data = mtcars[, c(1,3,4,5,6,7)]
 correlation = round(cor(data), 2)
@@ -186,11 +204,11 @@ correlation = correlation[d$order, d$order]
 correlation[upper.tri(correlation)] <- NA
 correlation = melt(correlation, na.rm = TRUE)
 fig = plot_ly(data = correlation, x = ~Var1, y = ~Var2, z = ~value, 
-              type = ""heatmap"", colors = colorRamp(c(""blue"", ""red""))) %>%
-  layout(title = ""Correlation between the mtcars variables"",
-         xaxis = list(title="" ""), 
-         yaxis = list(title="" ""),
-         legend = list(orientation=""v"", title=list(text=""<b>Correlation</b>"")))
+              type = 'heatmap', colors = colorRamp(c('blue', 'red'))) %>%
+  layout(title = 'Correlation between the mtcars variables',
+         xaxis = list(title=' '), 
+         yaxis = list(title=' '),
+         legend = list(orientation='v', title=list(text='<b>Correlation</b>')))
 fig"
 plotOutput,renderPlot,ggplot2,Basic Heatmap,"data = mtcars[, c(1,3,4,5,6,7)]
 correlation = round(cor(data), 2)
@@ -203,11 +221,11 @@ correlation[upper.tri(correlation)] <- NA
 correlation = melt(correlation, na.rm = TRUE)
 plot = ggplot(data = correlation, aes(x=Var1, y=Var2, fill=value)) + 
   geom_tile() +
-  geom_text(aes(x = Var1, y = Var2, label = value), color = ""black"", size = 4) +
-  labs(title = ""Correlation between the mtcars variables"",
-       x = "" "",
-       y = "" "",
-       fill = ""Correlation"") +
-  scale_fill_gradient2(low = ""blue"", high = ""red"", mid = ""white"", 
-                       midpoint = 0, limit = c(-1,1), space = ""Lab"")
+  geom_text(aes(x = Var1, y = Var2, label = value), color = 'black', size = 4) +
+  labs(title = 'Correlation between the mtcars variables',
+       x = ' ',
+       y = ' ',
+       fill = 'Correlation') +
+  scale_fill_gradient2(low = 'blue', high = 'red', mid = 'white', 
+                       midpoint = 0, limit = c(-1,1), space = 'Lab')
 plot"

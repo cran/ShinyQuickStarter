@@ -10,7 +10,7 @@ This 'RStudio' addin makes the creation of 'Shiny' and 'ShinyDashboard' apps mor
 }
 \details{
 \tabular{ll}{ Package: \tab ShinyQuickStarter\cr Type: \tab Package\cr Version:
-\tab 2.0.0\cr Date: \tab 2020-03-02\cr License: \tab GPL-3\cr Depends: \tab
+\tab 2.0.1\cr Date: \tab 2021-06-29\cr License: \tab GPL-3\cr Depends: \tab
 R (>= 3.6.0)}
 }
 \author{

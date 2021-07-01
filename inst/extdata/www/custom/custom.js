@@ -1,12 +1,14 @@
-  // Loader.
-  $('body').append(
-    '<div class="loading_background">' + 
-      '<div class="loading_foreground">' +
-        '<div class="loading_animation"></div>' +
-        '<div class="loading_title">ShinyQuickStarter</div>' +
-      '</div>' +
-    '</div>'
-  );
+// Loader.
+$('body').append(
+  '<div class="loading_background">' + 
+    '<div class="loading_foreground">' +
+      '<div class="loading_animation"></div>' +
+      '<div class="loading_title">ShinyQuickStarter</div>' +
+    '</div>' +
+  '</div>'
+);
+
+
 
 $(window).on('load', function(){
 
@@ -25,7 +27,8 @@ $(window).on('load', function(){
     // Shiny interactions.
     Shiny.addCustomMessageHandler("set_draggable", function(message) {
       $( message.selector ).draggable({
-        helper: "clone"
+        helper: "clone",
+        appendTo: "body"
       });
     });
   
@@ -74,15 +77,9 @@ $(window).on('load', function(){
   
     Shiny.addCustomMessageHandler("edit_mode", function(edit_mode) {
       if (edit_mode) {
-        $('.sqs_ui_element_header').css('display', 'inline-block');
-        $('.sqs_ui_element_body').css('border-style', 'solid');
-        
         $( '#sqs_page_type' ).prop('disabled', false);
         $( '#sqs_page_type' ).selectpicker('refresh');
       } else {
-        $('.sqs_ui_element_header').css('display', 'none');
-        $('.sqs_ui_element_body').css('border-style', 'none');
-        
         $( '#sqs_page_type' ).prop('disabled', true);
         $( '#sqs_page_type' ).selectpicker('refresh');
       }
@@ -272,13 +269,28 @@ $(window).on('load', function(){
   
     });
     
-    
-    Shiny.addCustomMessageHandler("stop_addin", function(message) {
-      $( 'body' ).append('<div id=\'#shiny-disconnected-overlay\'></div>');
+    $(document).on('shiny:disconnected', function(event) {
+      $( "body" ).click();
+      $( "#stop_addin_button" ).click();
     });
-  
-    
+
+
     // User interactions.
+    $( "#stop_addin_button" ).click( function( event ) {
+      
+      $( ".stop_addin_button" ).remove();
+      $( ".tooltip" ).remove();
+
+      $( '#layout' ).replaceWith(
+        '<div class="loading_background">' + 
+          '<div class="loading_foreground" style="top:45%;">' +
+            '<div class="loading_title">Thanks for using the ShinyQuickStarter!</div>' +
+          '</div>' +
+        '</div>'
+      );
+      
+    });
+    
     $( "body" ).click( function( event ) {
       if ($("#edit_mode").prop('checked')) {
         if (event.ctrlKey) {
@@ -305,6 +317,21 @@ $(window).on('load', function(){
           #UI_Outputs > p[sqs_show!='false']" ).filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(search) > -1);
       });
+      
+      console.log(search)
+      console.log(search.length)
+      
+      if (search.length === 0) {
+        $("#search_clear").css("display", "none");
+      } else {
+        $("#search_clear").css("display", "block");
+      }
+    });
+    
+    
+    $("#search_clear").click(function(){
+      $("#search_box").val('');
+      $("#search_box").change();
     });
     
     

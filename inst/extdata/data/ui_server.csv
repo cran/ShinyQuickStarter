@@ -9,4 +9,5 @@ textOutput,renderText
 vebatimTextOutput,renderPrint
 downloadButton,downloadHandler
 downloadLink,downloadHandler
+downloadBttn,downloadHandler
 plotlyOutput,renderPlotly

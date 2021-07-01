@@ -66,7 +66,7 @@
 ## @param df data.table with arguments of highlighted element
 ##
 ## @return HTML for options
-.server_options_to_tagList <- function(element, df) {
+.server_options_to_tagList <- function(element, df, single_quotes=TRUE) {
   uis2 = c()
   
   # Create options for server function - only for outputs.
@@ -75,20 +75,14 @@
   
   if (length(server_functions) > 0) {
     # Header.
-    #choice = .choices_to_string(choices_list=server_functions, with_NULL=FALSE)
-    #ui = sprintf("selectInput(inputId = 'sqs_option_server_function', label = '',
-    #             choices = %s, selected = %s)", choice, "NULL")
-    #uis2 = sprintf("div(style='display:flex', h3(style='padding-right:15px', 'Options for'), %s)", ui)
-    
-    uis2 = sprintf("HTML('<h3>Options for <code>%s</code></h3>')", server_functions[1])
-    
+    uis2 = sprintf('HTML("<h3>Options for <code>%s</code></h3>")', server_functions[1])
     
     # Selection of expr.
     choice = server_expr$name[server_expr$ui_function == element$ui_function &
                                 server_expr$server_function == element$server_function]
     
-    ui = sprintf("selectInput(inputId = 'sqs_option_server_expr', label = 'expr',
-                 choices = %s, selected = %s)",
+    ui = sprintf('selectInput(inputId = "sqs_option_server_expr", label = "expr",
+                 choices = %s, selected = %s)',
                  .choices_to_string(choices_list=choice, with_NULL=FALSE),
                  df$value[df$part == "server" & df$argument == "expr"])
     uis2 = c(uis2, ui)
@@ -99,8 +93,9 @@
                           server_expr$server_function == element$server_function]
     
     for (index in 1:nrow(exprs)) {
-      uis2 = c(uis2, sprintf("conditionalPanel(condition=\"input.sqs_option_server_expr=='%s'\", pre('%s'))",
-                             exprs$name[index], gsub('(")+', '"', exprs$expr[index])))
+      new_uis2 = sprintf("conditionalPanel(condition=\"input.sqs_option_server_expr==\'%s\'\", pre(\"%s\"))",
+                         exprs$name[index], gsub('(")+', '"', exprs$expr[index]))
+      uis2 = c(uis2, new_uis2)
     }
     
     # Other options.

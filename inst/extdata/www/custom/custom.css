@@ -4,8 +4,8 @@
   right: 20px;
   position: absolute;
   color: #3c8dbc;
-  font-size: 2em;
-  bottom: 7px;
+  font-size: 1.5em;
+  bottom: 3px;
 }
 
 
@@ -78,6 +78,10 @@
 
 
 /* Custom design changes of addin. */
+#info_navigation_tree td {
+  border-style: solid;
+}
+
 .fullscreen {
   padding: 0px;
   margin: 0px;
@@ -96,12 +100,14 @@
   background-color: #F2F2F2;
   color: #777;
   position: relative;
-  padding: 10px;
+  /*position: sticky;
+  top: 0;
+  z-index: 100000;*/
+  padding: 5px;
 }
 
 div[sqs_id="drop_zone"] {
   width: 100%;
-  min-height: 89%;
   padding: 2px;
 }
 
@@ -113,6 +119,10 @@ div[sqs_id="drop_zone_content"] {
   padding: 10px 10px;
   overflow-x: hidden;
   height: 100%;
+}
+
+#ui_options.row, #server_options.row {
+  padding: 3px 0px;
 }
 
 #ui_code, #server_code, #module_code {
@@ -140,7 +150,6 @@ div[sqs_type='fluidRow'] { width: 100%; }
 div[sqs_type='fluidRow'] .row { margin: 0px; }
 div[sqs_type='fluidRow'] .sqs_ui_element_body { min-height: 50px; }
 
-/*div[sqs_type='column'] .sqs_ui_element_body > div { width: 100%; }*/
 div[sqs_type='column'] .sqs_ui_element_body { min-height: 50px; }
 
 div[sqs_type='tabBox'] .sqs_ui_element_body { min-height: 50px; }
@@ -163,7 +172,9 @@ div[sqs_type="verticalLayout"], div[sqs_type="verticalLayout"] .sqs_ui_element_b
 div[sqs_type="splitLayout"], div[sqs_type="splitLayout"] .sqs_ui_element_body,
 div[sqs_type="flowLayout"], div[sqs_type="flowLayout"] .sqs_ui_element_body,
 div[sqs_type="navlistPanel"], div[sqs_type="navlistPanel"] .sqs_ui_element_body, 
-div[sqs_type="dashboardBody"], div[sqs_type="dashboardBody"] .sqs_ui_element_body {
+div[sqs_type="dashboardBody"], div[sqs_type="dashboardBody"] .sqs_ui_element_body,
+div[sqs_type="miniPage"], div[sqs_type="miniPage"] .sqs_ui_element_body,
+div[sqs_type="miniContentPanel"], div[sqs_type="miniContentPanel"] .sqs_ui_element_body {
   width: 100%;
   height: 100%;
 }
@@ -181,6 +192,11 @@ div[sqs_type="navlistPanel"] .row,
 div[sqs_type="dataTableOutput"] .row {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+
+.gadget-tabs-content-container {
+  min-height: 400px;
 }
 
 
@@ -220,8 +236,12 @@ div[sqs_type="dataTableOutput"] .row {
 
 
 /* Info Tour. */
-.wide_step_popover {
-  min-width: 45% !important;
+.step_popover_60 {
+  min-width: 60% !important;
+}
+
+.step_popover_40 {
+  min-width: 40% !important;
 }
 
 .right_tabs_popover {
@@ -229,7 +249,7 @@ div[sqs_type="dataTableOutput"] .row {
 }
 
 .right_tabs_ul_popover {
-  top: 35px !important;
+  top: 40px !important;
 }
 
 .info_step_number {
@@ -263,7 +283,7 @@ div[sqs_type="dataTableOutput"] .row {
 .tabs li.tabs-selected .tabs-inner {
   color: #39c;
   background: transparent;
-  border-bottom: 2px solid;
+  border-bottom: 3px solid;
 }
 
 
@@ -274,3 +294,17 @@ div[sqs_type="dataTableOutput"] .row {
     font-size: 14px;
     font-weight: bold;
 }
+
+
+#search_clear {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  height: 16px;
+  margin: auto;
+  font-size: 16px;
+  cursor: pointer;
+  color: #ccc;
+}
+

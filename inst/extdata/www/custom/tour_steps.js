@@ -18,7 +18,7 @@ function tour_steps(driver) {
   {
     element: '#info_sqs_page_type',
     popover: {
-	    className: "wide_step_popover",
+	    className: "step_popover_60",
 	    title: 'Page Types<p class="info_step_number">1/21</p>',
 	    description: '<p>As a first step you should choose a suitable page type.<p> \
    <p>The page type can largely influence the design and the navigation within your Shiny app.</p> \
@@ -34,6 +34,7 @@ function tour_steps(driver) {
    <ul> \
      <li><b>navbarPage</b> creates an app that contains a top level navigation bar.</li> \
      <li><b>dashboardPage</b> creates an app that contains a top level sidebar.</li> \
+     <li><b>miniPage</b> creates an app that contains a top level navigation menu and works well on smaller screens.</li> \
    </ul> \
    <p><b>Module</b></p> \
    <ul> \
@@ -47,7 +48,7 @@ function tour_steps(driver) {
   {
     element: '#info_navigation_tree',
     popover: {
-	    className: "wide_step_popover",
+	    className: "step_popover_60",
 	    title: 'Navigation Tree<p class="info_step_number">2/21</p>',
 	    description: '<p>The Navigation Tree shows you a nested overview over all UI Elements in your Shiny app. \
    Additionally, important ids are displayed for UI Elements for which one can be specified.</p> \
@@ -67,6 +68,8 @@ function tour_steps(driver) {
     and connecting them by using the <code>tabName</code> argument in the Options panel. If your sidebar is \
     nested, you can only connect a <code>tabItem</code> to the lowest <code>menuItem</code> Elements. \
     </li> \
+    <li> In a <b>miniPage</b> the top level navigation consists of <code>miniTabPanel</code> Elements, \
+    that are nested within a <code>miniTabstripPanel</code> Element.</li> \
    </ul>',
 	    position: 'right'
     }
@@ -75,6 +78,7 @@ function tour_steps(driver) {
   {
     element: 'div[sqs_id=ui_element_zone] .panel:nth-child(1)',
     popover: {
+      className: "step_popover_40",
 	    title: 'Search Box<p class="info_step_number">3/21</p>',
 	    description: '<p>Here you can filter the UI Elements by some search term e.g. \'button\' or \'ShinyWidgets\'.</p>',
 	    position: 'right'
@@ -89,6 +93,7 @@ function tour_steps(driver) {
   {
     element: 'div[sqs_id=ui_element_zone] .panel:nth-child(2)',
     popover: {
+      className: "step_popover_40",
 	    title: 'UI Layout<p class="info_step_number">4/21</p>',
 	    description: '<p>These UI Elements are used to control the layout of the app.</p> \
     <p>In most of the UI Layout Elements additional UI Elements can be inserted.</p>',
@@ -104,6 +109,7 @@ function tour_steps(driver) {
   {
     element: 'div[sqs_id=ui_element_zone] .panel:nth-child(3)',
     popover: {
+      className: "step_popover_40",
 	    title: 'UI Inputs<p class="info_step_number">5/21</p>',
 	    description: '<p>These UI Elements are used for user interaction with the Shiny app.</p> \
     <p>Every UI Input requires an <code>inputId</code> e.g. \'update\', which allows access \
@@ -120,6 +126,7 @@ function tour_steps(driver) {
   {
     element: 'div[sqs_id=ui_element_zone] .panel:nth-child(4)',
     popover: {
+      className: "step_popover_40",
 	    title: 'UI Outputs<p class="info_step_number">6/21</p>',
 	    description: '<p>These UI Elements are used for displaying data via text, tables, plots, etc. to the user.</p> \
     <p>UI Outputs consist of a function in the ui part of the app e.g. <code>dataTableOutput</code> \

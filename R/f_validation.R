@@ -70,12 +70,12 @@
   # Empty string.
   if (x %in% c(NULL, "", "NULL", "'NULL'")) {
     if (!args_list$allow_NULL) {
-      errors = c(errors, "The id cannot be empty.")
+      errors = c(errors, "The inputId cannot be empty.")
     }
   } else {
     # String with invalid characters.
     if (nchar(gsub("^[A-Za-z][A-Za-z0-9_:\\.-]*", "", x)) != 0) {
-      errors = c(errors, "The id is not valid. It needs to match the regex ^[A-Za-z][A-Za-z0-9_:\\.-]*")
+      errors = c(errors, "The inputId is not valid. It needs to match the regex ^[A-Za-z][A-Za-z0-9_:\\.-]*")
     } 
   }
 
@@ -84,7 +84,7 @@
   inputIds = unlist(lapply(inputIds, .string_to_vector))
 
   if (sum(x == inputIds) > 1) {
-    errors = c(errors, "The id has to be unique.")
+    errors = c(errors, "The inputId has to be unique.")
   }
   
   if (length(errors) == 0) {

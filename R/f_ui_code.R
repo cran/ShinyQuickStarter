@@ -51,9 +51,10 @@
 ## @param include_defaults if TRUE all default arguments are also included in the ui code
 ##
 ## @return generated code for ui
-.create_ui_code <- function(ui_code, uie, uia, insertUI=FALSE, include_defaults=TRUE) {
+.create_ui_code <- function(ui_code, uie, uia, insertUI=FALSE, include_box=FALSE, 
+                            include_defaults=TRUE, single_quotes=TRUE) {
   
-  ui_code = .recursive.ui_code(ui_code, "drop_zone", uie, uia, insertUI, include_defaults)
+  ui_code = .recursive.ui_code(ui_code, "drop_zone", uie, uia, insertUI, include_box, include_defaults)
   ui_code = str_replace_all(ui_code, ", %s", "")
   ui_code = str_replace_all(ui_code, "\\),", "),\n")
   ui_code = str_replace_all(ui_code, ",", ",\n")
@@ -61,6 +62,11 @@
   ui_code = str_replace_all(ui_code, "\r", "")
   ui_code = style_text(ui_code, scope="line_breaks")
   ui_code = paste(ui_code, collapse="\n")
+  
+  # Single or double quotes.
+  if (!single_quotes) {
+    ui_code = gsub("(?<!#)'", '"', ui_code, perl=TRUE)
+  }
   
   return(ui_code)
   
@@ -79,7 +85,8 @@
 ## @param index current index of nested ui elements
 ##
 ## @return generated code for ui
-.recursive.ui_code <- function(ui_code, ids, uie, uia, insertUI=FALSE, include_defaults=TRUE, index=0) {
+.recursive.ui_code <- function(ui_code, ids, uie, uia, insertUI=FALSE, include_box=FALSE, 
+                               include_defaults=TRUE, index=0) {
   for (i in 1:length(ids)) {
     eid = ids[i]
     if (eid == "drop_zone") {
@@ -92,10 +99,9 @@
       arguments = uia[uia$sqs_id == eid,]
       ui = .df_to_ui_string(type, arguments, insertUI, include_defaults)
 
-      if (insertUI) {
+      if (include_box) {
         if (box == "none") {
           # The sqs_ui_element can not be displayed in a box.
-          
         } else if (box == "inside") {
           # The sqs_ui_element box is inside the ui element.
           ui = stri_replace_last(ui, fixed=")", ", %s)")
@@ -112,7 +118,7 @@
       }
     }
     
-    if (insertUI & box != "none") {
+    if (include_box & box != "none") {
       pattern = "\\)\\)\\)$"
       replacement_1 = ", %s))), %s"
       replacement_2 = "))), %s"
@@ -132,7 +138,8 @@
     ui_code = stri_replace_first_regex(ui_code, "%s", ui)
 
     if (length(children_ids) != 0) {
-      ui_code = .recursive.ui_code(ui_code, children_ids, uie, uia, insertUI, include_defaults, index+1)
+      ui_code = .recursive.ui_code(ui_code, children_ids, uie, uia, insertUI, include_box,
+                                   include_defaults, index+1)
       ui_code = stri_replace_first_regex(ui_code, ", %s", "")
     }
   }

@@ -12,7 +12,7 @@
 
 .loading_animation {
   color: #ffffff;
-  font-size: 10px;
+  font-size: 8px;
   margin: 80px auto;
   position: relative;
   text-indent: -9999em;
@@ -40,6 +40,28 @@
   left: 3.5em;
 }
 
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+
 .loading_background {
   position: absolute;;
   top: 0;
@@ -62,26 +84,10 @@
   color: white;
   font-size: 5vw;
   font-family: "MakDah";
-  text-align: "center";
+  text-align: center;
 }
 
-@-webkit-keyframes load7 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 2.5em 0 -1.3em;
-  }
-  40% {
-    box-shadow: 0 2.5em 0 0;
-  }
+#shiny-disconnected-overlay {
+  display: none;
 }
-@keyframes load7 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 2.5em 0 -1.3em;
-  }
-  40% {
-    box-shadow: 0 2.5em 0 0;
-  }
-}
+

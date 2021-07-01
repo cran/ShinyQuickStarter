@@ -69,7 +69,7 @@
       types = elements$function_name[elements$category == "UI Page"]
       choices_grouped = list(
         "Without Top-Level Navigation" = list("fluidPage", "fillPage", "fixedPage", "bootstrapPage"),
-        "With Top-Level Navigation" = list("navbarPage", "dashboardPage"),
+        "With Top-Level Navigation" = list("navbarPage", "dashboardPage", "miniPage"),
         "Module" = list("tagList")
       )
       options_grouped = list(
@@ -79,6 +79,7 @@
         "<p>bootstrapPage <sup>shiny</sup></p>",
         "<p>navbarPage <sup>shiny</sup></p>",
         "<p>dashboardPage <sup>shinydashboard</sup></p>",
+        "<p>miniPage <sup>miniPage</sup></p>",
         "<p>tagList <sup>shiny</sup></p>"
       )
       
@@ -115,7 +116,7 @@
     
     observeEvent(input$edit_mode, {
       
-      # Show or hide the container around the ui elements.
+      # Block page type from selection.
       session$sendCustomMessage("edit_mode", input$edit_mode)
       
       # Deselect ui element in navigation tree and drop zone.
@@ -131,7 +132,7 @@
     
     output$validation_errors <- renderUI({
       if (length(values$errors) > 0) {
-        HTML(sprintf("Validation error detected.", length(values$errors)))
+        HTML("Validation error detected.")
       } else {
         HTML("")
       }
@@ -186,7 +187,8 @@
             values$elements,
             values$arguments[values$arguments$function_name %in% values$elements$ui_function,],
             insertUI=FALSE,
-            include_defaults=FALSE
+            include_defaults=FALSE,
+            single_quotes=input$single_quotes
           )
         } else {
           ui_code = unlist(values$errors)
@@ -205,13 +207,14 @@
       
       if (nrow(values$elements) > 0) {
         if (length(values$errors) == 0) {
-          server_code = .create_server_code(values$elements, values$arguments, insertServer=FALSE)  
+          server_code = .create_server_code(values$elements, values$arguments, 
+                                            insertServer=FALSE, single_quotes=input$single_quotes)
         } else {
           server_code = unlist(values$errors)
         }
       }
       values$server_code = server_code
-      
+
       HTML(paste0("<pre>", values$server_code, "</pre>"))
     })
     outputOptions(output, "server_code", suspendWhenHidden = FALSE)
@@ -222,8 +225,8 @@
       
       if (nrow(values$elements) > 0) {
         if (length(values$errors) == 0) {
-          module_code = .create_module_code(values$ui_code, values$server_code,
-                                            input$module_name, input$module_suffix)
+          module_code = .create_module_code(values$ui_code, values$server_code, input$module_name, 
+                                            input$module_suffix, single_quotes=input$single_quotes)
         } else {
           module_code = unlist(values$errors)
         }
@@ -245,7 +248,8 @@
 
       req(is.null(isolate(values$errors)))
       
-      server_code = .create_server_code(values$elements, values$arguments, insertServer=TRUE)
+      server_code = .create_server_code(values$elements, values$arguments, 
+                                        insertServer=TRUE, single_quotes=input$single_quotes)
       eval(parse(text=server_code))
 
     })
@@ -298,6 +302,7 @@
     
     
     observeEvent({
+      input$edit_mode
       values$elements
       values$arguments
     }, {
@@ -311,11 +316,15 @@
       if (nrow(values$elements) > 0) {
         ui = .recursive.ui_code("%s", "drop_zone", values$elements, 
                                 values$arguments[values$arguments$function_name %in% values$elements$ui_function,],
-                                insertUI=TRUE, include_defaults=FALSE)
+                                insertUI=TRUE, include_box=input$edit_mode, include_defaults=FALSE)
         ui = str_replace_all(ui, ", %s", "")
+        #print(cat(ui))
         ui = eval(parse(text=ui))
-        for (index in 1:length(ui)) {
-          ui[[index]] = .recursive.design_changes(ui[[index]], values$elements, values$arguments)
+        
+        if (input$edit_mode) {
+          for (index in 1:length(ui)) {
+            ui[[index]] = .recursive.design_changes(ui[[index]], values$elements, values$arguments)
+          }
         }
       }
       
@@ -409,19 +418,30 @@
       
       # Find all hrefs in the drop zone.
       hrefs = .recursive.href(list(ui=values$drop_zone_ui, hrefs=c()))$hrefs
-      
+
       if (length(hrefs) > 0 & !is.null(values$highlighted)) {
         temp = inner_join(values$elements, elements[,c("function_name", "has_href")], 
                           by=c("ui_function"="function_name"))
-        temp$href[!is.na(temp$has_href) & temp$has_href == "TRUE"] = hrefs
+
+        if (input$sqs_page_type == "miniPage") {
+          # The links to miniTabPanel elements are at the end.
+          temp = rbind(
+            temp[temp$ui_function != "miniTabPanel",],
+            temp[temp$ui_function == "miniTabPanel",]
+          )
+        }
         
-        # A dashboardPage splits the navigation and the content in two elements.
-        # Copy the hrefs to the navigation elements to the content elements based on the connective tabName.
-        temp = left_join(temp, values$arguments[values$arguments$argument == "tabName", 
-                                                c("sqs_id", "value")], by="sqs_id")
-        temp$value = str_replace_all(temp$value, "'", "")
-        temp$value[!is.na(temp$value)] = paste0("#shiny-tab-", temp$value[!is.na(temp$value)])
-        temp$href[!is.na(temp$value)] = temp$value[!is.na(temp$value)]
+        temp$href[!is.na(temp$has_href) & temp$has_href == "TRUE"] = hrefs
+
+        if (input$sqs_page_type == "dashboardPage") {
+          # A dashboardPage splits the navigation and the content in two elements.
+          # Copy the hrefs to the navigation elements to the content elements based on the connective tabName.
+          temp = left_join(temp, values$arguments[values$arguments$argument == "tabName", 
+                                                  c("sqs_id", "value")], by="sqs_id")
+          temp$value = str_replace_all(temp$value, "'", "")
+          temp$value[!is.na(temp$value)] = paste0("#shiny-tab-", temp$value[!is.na(temp$value)])
+          temp$href[!is.na(temp$value)] = temp$value[!is.na(temp$value)]
+        }
         
         if (nrow(temp) > 0) {
           
@@ -638,7 +658,7 @@
               arguments_all = arguments_all[order(arguments_all$order),]
 
               ui_options = .ui_options_to_tagList(element, arguments_all)
-              server_options = .server_options_to_tagList(element, arguments_all)
+              server_options = .server_options_to_tagList(element, arguments_all, input$single_quotes)
             } else {
               ui_options = "tagList('No arguments.')"
               server_options = "tagList('No arguments.')"
@@ -959,27 +979,23 @@
         }
         
         if (input$create_as_rstudio_project) {
-          file_content = "
-            Version: 1.0
-            
-            RestoreWorkspace: Default
-            SaveWorkspace: Default
-            AlwaysSaveHistory: Default
-            
-            EnableCodeIndexing: Yes
-            UseSpacesForTab: Yes
-            NumSpacesForTab: 2
-            Encoding: UTF-8
-            
-            RnwWeave: Sweave
-            LaTeX: pdfLaTeX
-            
-            BuildType: Package
-            PackageUseDevtools: Yes
-            PackageInstallArgs: --no-multiarch --with-keep.source
-            PackageCheckArgs: --as-cran
-            "
-          
+          file_content = "Version: 1.0
+RestoreWorkspace: Default
+SaveWorkspace: Default
+AlwaysSaveHistory: Default
+
+EnableCodeIndexing: Yes
+UseSpacesForTab: Yes
+NumSpacesForTab: 2
+Encoding: UTF-8
+
+RnwWeave: Sweave
+LaTeX: pdfLaTeX
+
+BuildType: Package
+PackageUseDevtools: Yes
+PackageInstallArgs: --no-multiarch --with-keep.source
+PackageCheckArgs: --as-cran"
           file_path = paste0(values$export_folders_directory, "/", input$project_name, ".Rproj")
           cat(file_content, file=file_path)
         }
@@ -1063,7 +1079,8 @@
       if (input$export_code_2) {
         global_code = .create_global_code(
           values$elements, values$arguments,
-          input$add_documentation, input$remove_all, input$source_functions, input$source_modules
+          input$add_documentation, input$remove_all, input$source_functions, input$source_modules,
+          single_quotes=input$single_quotes
         )
         
         if (input$sqs_page_type == "tagList") {
@@ -1083,21 +1100,27 @@
         }
         
         for (i in 1:length(values$export_file_paths)) {
-          cat(file_contents[i], file=values$export_file_paths[i])
+          writeLines(
+            iconv(file_contents[i], to="UTF-8"), 
+            values$export_file_paths[i], 
+            useBytes=T
+          )
         }
         
       }
     })
     
     
-    # Close App when tab or browser is closed.
-    session$onSessionEnded(function() {
-      session$sendCustomMessage("stop_addin", NULL)
+    #### Close App. ####
+    # When closing button was clicked.
+    observeEvent(input$stop_addin_button, {
       stopApp()
     })
     
-    
-    observeEvent(input$stop_addin_button, {
+    # When tab or browser is closed.
+    # Necessary so app does not keep running in the background.
+    session$onSessionEnded(function() {
+      runjs('$( "#stop_addin_button" ).click();')
       stopApp()
     })
 

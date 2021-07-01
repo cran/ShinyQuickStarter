@@ -8,7 +8,8 @@
 ## @param source_modules
 ##
 ## @return generated code for global file
-.create_global_code <- function(uie, uia, add_documentation, remove_all, source_functions, source_modules) {
+.create_global_code <- function(uie, uia, add_documentation, remove_all, 
+                                source_functions, source_modules, single_quotes=TRUE) {
   global_code = c()
   
   if (add_documentation) {
@@ -36,9 +37,9 @@
     global_code = c(
       global_code,
       "# Source functions.
-      module_files = list.files(path='functions', full.names=TRUE, recursive=TRUE)
+      function_files = list.files(path='functions', full.names=TRUE, recursive=TRUE)
       
-      for (file in module_files) {
+      for (file in function_files) {
         source(file, encoding='UTF-8')
       }"
     )
@@ -56,14 +57,14 @@
     )
   }
   
-  #readRDS(file)
-  #fread(file, sep)
-  #read.xlsx(xlsxFile, sheet)
-
   global_code = paste(global_code, collapse="\n\n")
-  
   global_code = style_text(global_code, scope="line_breaks")
   global_code = paste(global_code, collapse="\n")
+  
+  # Single or double quotes.
+  if (!single_quotes) {
+    global_code = gsub("(?<!#)'", '"', global_code, perl=TRUE)
+  }
 
   return(global_code)
   

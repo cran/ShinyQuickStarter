@@ -17,11 +17,23 @@
       knobInput(inputId = "sqs_zzz7", label = NULL, value = 50),
       dataTableOutput("sqs_zzz8"),
       plotlyOutput("sqs_zzz9"),
+      airDatepickerInput(inputId = "sqs_zzz10"),
+      currencyInput(inputId = 'sqs_zzz_11', label= "z", value = 0),
+      spectrumInput(inputId = 'sqs_zzz_12', label = 'z', choices = c('black')),
       fixedPage(),
       fillPage(),
       bootstrapPage(),
       navbarPage(title = ""),
       dashboardPage(dashboardHeader(), dashboardSidebar(), dashboardBody()),
+      dropdown(),
+      dropdownButton(),
+      miniPage(
+        gadgetTitleBar(
+          miniTitleBarButton(inputId = 'sqs_zzz_13', label = 'Done'),
+          miniTitleBarCancelButton(inputId = 'sqs_zzz_14', label = 'Cancel')
+        ),
+        miniTabstripPanel(miniTabPanel(title = 'title',miniContentPanel()))
+      )
     ),
     
     class = "fullscreen",
@@ -126,12 +138,20 @@
                   div("notificationItem", class = "add_navigation"),
                   div("messageItem", class = "add_navigation"),
                   div("taskItem", class = "add_navigation"),
+                  
+                  div("miniTitleBar", class = "add_navigation"),
+                  div("gadgetTitleBar", class = "add_navigation"),
+                  div("miniTitleBarButton", class = "add_navigation"),
+                  div("miniTitleBarCancelButton", class = "add_navigation"),
+                  div("miniTitleBarCancelButton", class = "add_navigation"),
+                  
+                  div("miniTabstripPanel", class = "add_navigation"),
+                  div("miniTabPanel", class = "add_navigation"),
+                  div("miniContentPanel", class = "add_navigation"),
+                  div("miniButtonBlock", class = "add_navigation"),
                 )
               ),
-              div(
-                "Remove Element", 
-                class = "remove_navigation"
-              )
+              div("Remove Element", class = "remove_navigation")
             ),
 
             div(
@@ -158,7 +178,11 @@
               div(
                 id = "sqs_search_box",
                 "data-options" = "collapsed:false,collapsible:false",
-                HTML('<input id="search_box" class="form-control" type="search" placeholder="Search UI Element">')
+                
+                HTML('<div class="btn-group" style="width:100%">
+                        <input id="search_box" class="form-control" type="search" placeholder="Search UI Element">
+                        <span id="search_clear" class="fas fa-window-close" style="display:none"></span>
+                      </div>')
               ),
 
               div(
@@ -192,7 +216,7 @@
           tags$a(
             id = "info",
             tags$i(class = "fas fa-info-circle", 
-                   style = "font-size:30px;margin:0px 5px")
+                   style = "font-size:23px;margin:0px 5px")
           ),
 
           div(
@@ -205,7 +229,7 @@
               offLabel = "Display",
               onStatus = "primary",
               offStatus = "danger",
-              size = "small",
+              size = "mini",
               labelWidth = "auto",
               handleWidth = "auto",
               inline = TRUE
@@ -387,10 +411,16 @@
                 ),
 
                 uiOutput("export_code_directory"),
+                
+                checkboxInput(
+                  inputId = "single_quotes",
+                  label = "Use single quotes?",
+                  value = FALSE
+                ),
 
                 conditionalPanel(
                   condition = "input.sqs_page_type != 'tagList'",
-
+                  
                   checkboxInput(
                     inputId = "multiple_files",
                     label = "Multiple files (global.R, ui.R, server.R)?",

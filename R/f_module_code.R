@@ -6,7 +6,7 @@
 ## @param suffix suffix for module ui and server function
 ##
 ## @return generated code for module
-.create_module_code <- function(ui_code, server_code, module_name, suffix) {
+.create_module_code <- function(ui_code, server_code, module_name, suffix, single_quotes=TRUE) {
   
   ui_code = str_replace(ui_code, "ui <- ", "")
   server_code = gsub("server <- function(input, output, session) {", "", server_code, fixed=TRUE)
@@ -46,8 +46,10 @@
   module_code = style_text(module_code, scope="line_breaks")
   module_code = paste(module_code, collapse="\n")
   module_code = str_replace_all(module_code, "\n\n\n", "\n\n")
-
+  
   # Add ns() for inputId and outputsId.
+  module_code = gsub("(?<!#)\"", "'", module_code, perl=TRUE)
+  
   old_inputId = str_extract_all(module_code, "inputId = '.+'")[[1]]
   old_outputId = str_extract_all(module_code, "outputId = '.+'")[[1]]
   
@@ -67,6 +69,11 @@
     for (i in 1:length(old_outputId)) {
       module_code = str_replace_all(module_code, old_outputId[i], new_outputId[i])
     }
+  }
+  
+  # Single or double quotes.
+  if (!single_quotes) {
+    module_code = gsub("(?<!#)'", '"', module_code, perl=TRUE)
   }
 
   return(module_code)

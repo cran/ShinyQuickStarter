@@ -35,7 +35,7 @@
 ##                     if FALSE the server code is generated as it is needed for the exported shiny app
 ##
 ## @return generated code for server
-.create_server_code <- function(uie, uia, insertServer=FALSE) {
+.create_server_code <- function(uie, uia, insertServer=FALSE, single_quotes=TRUE) {
 
   server_code = "%s"
 
@@ -48,18 +48,27 @@
       
       element = uie[uie$sqs_id == id,]
       outputId = uia$value[uia$sqs_id == id & uia$argument == "outputId"]
-      expr_name = str_replace_all(uia$value[uia$sqs_id == id & uia$argument == "expr"], "'", "")
-
-      # Expression argument in server function.
-      if (is.na(expr_name)) {
-        expr = ""
+      
+      if (!element$server_function %in% c("downloadHandler")) {
+        expr_name = str_replace_all(uia$value[uia$sqs_id == id & uia$argument == "expr"], "'", "")
+  
+        # Expression argument in server function.
+        if (is.na(expr_name)) {
+          expr = ""
+        } else {
+          expr = server_expr$expr[server_expr$ui_function == element$ui_function &
+                                    server_expr$server_function == element$server_function &
+                                    server_expr$name == expr_name]
+          expr = gsub('(")+', '"', expr)
+        }
+        
+        expr = sprintf("{%s}", expr)
       } else {
         expr = server_expr$expr[server_expr$ui_function == element$ui_function &
                                   server_expr$server_function == element$server_function &
-                                  server_expr$name == expr_name]
+                                  server_expr$name == "example"]
         expr = gsub('(")+', '"', expr)
       }
-      expr = sprintf("{%s}", expr)
       
       t_arguments = uia[uia$sqs_id == id & uia$function_name == element$server_function,]
       t_arguments = t_arguments[t_arguments$argument != "expr",]
@@ -113,6 +122,11 @@
   server_code = str_replace_all(server_code, "\r", "")
   server_code = style_text(server_code, scope="line_breaks")
   server_code = paste(server_code, collapse="\n")
+  
+  # Single or double quotes.
+  if (!single_quotes) {
+    server_code = gsub("(?<!#)'", '"', server_code, perl=TRUE)
+  }
 
   return(server_code)
   
